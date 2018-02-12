@@ -427,9 +427,9 @@
 [punishment,punish]@NullResponse @SetFlag(ElectroPunishment) @DeleteFlag(ElectroPlay)
 [both]@NullResponse @SetFlag(ElectroPlay) @SetFlag(ElectroPunishment)
 @DifferentAnswer @SystemMessage #VANC #VANP Play, punishment or both?
-@SystemMessage #VANC #VANP Tell me what level of schock you consider to be quite painful @InputVar[ElectroPHigh]
-@SystemMessage #VANC #VANP Tell me what level of schock you consider to be somehwat @InputVar[ElectroPMedium]
-@SystemMessage #VANC #VANP Tell me what level of schock you consider to be a painful maybe even pleasent.. @InputVar[ElectroPLow]
+@SystemMessage #VANC #VANP Tell me what level of shock you consider to be quite painful @InputVar[ElectroPHigh]
+@SystemMessage #VANC #VANP Tell me what level of shock you consider to be somewhat @InputVar[ElectroPMedium]
+@SystemMessage #VANC #VANP Tell me what level of shock you consider to be a painful maybe even pleasant.. @InputVar[ElectroPLow]
 (Toy5)
 @SystemMessage #VANC Gag? @ShowImage[\GNMImages\Toys\Gag.*]
 [yes]@SystemMessage #VANC #VANP #GNMGood @SetFlag(GNMToyGag)
@@ -443,11 +443,13 @@
 [both]@NullResponse @SetFlag(GagPlay) @SetFlag(GagPunishment)
 @DifferentAnswer @SystemMessage #VANC #VANP Play, punishment or both?
 (Toy6)
-@SystemMessage #VANC Girlfriend? @ShowImage[\GNMImages\Toys\Girlfriend.*]
+@SystemMessage #VANC Do you have a Wife or Girlfriend? @ShowImage[\GNMImages\Toys\Girlfriend.*]
 [yes]@SystemMessage #VANC #VANP #GNMGood @SetFlag(GNMToySetupGirlFriend)
 [no]@SystemMessage #VANC #VANP #GNMEmoteSad @DeleteFlag(GNMToySetupGirlFriend)
-[play,punish,punishment,both] @NullResponse @Goto(Toy5*)
+[play,punish,punishment,both] @NullResponse @Goto(Toy6*)
 @DifferentAnswer @SystemMessage #VANC #VANP #GNMYesOrNo
+@Flag(GNMToySetupGirlFriend) and what's this special person's name? @inputvar(GirlfriendName)
+
 @SystemMessage #VANC Basic Lingerie? @ShowImage[\GNMImages\Toys\LingerieSet.*]
 [yes]@SystemMessage #VANC #VANP #GNMGood @SetFlag(GNMToyLingerieBasic)
 [no]@SystemMessage #VANC #VANP #GNMEmoteSad @DeleteFlag(GNMToyLingerieBasic) @Goto(Toy7)
