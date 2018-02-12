@@ -28,14 +28,20 @@
 @SystemMessage #VANC #VANP There is a large variety of chores
 @SystemMessage #VANC #VANP Would you like chores involving budgets and your allowances?
 @SystemMessage #VANC #VANP This involves you keeping track of your money..
-@SystemMessage #VANC #VANP We'll dicuss things like average income, budgets to buy food etc.
+@SystemMessage #VANC #VANP We'll discuss things like average income, budgets to buy food etc.
 @SystemMessage #VANC #VANP Once in a while but on a regular schedule your chores will involve updating these budgets
 @SystemMessage #VANC #VANP If you were a real slave you wouldn't even be allowed access to money..
 @SystemMessage #VANC #VANP You would simply be the one keeping check on all the books..
-@SystemMessage #VANC #VANP Well do want chores involving finances?
+@SystemMessage #VANC #VANP Well do you want chores involving finances?
 [yes]@SystemMessage #VANC #VANP Okay.. @SetFlag(ChoreFinances)
 [no]@SystemMessage #VANC #VANP Okay..
 @DifferentAnswer @SystemMessage #VANC #VANP Yes or no?
+@Flag(GNMToySetupGirlFriend) @SystemMessage #VANC #VANP I noticed that you have a girlfriend or Wife....
+@Flag(GNMToySetupGirlFriend) @SystemMessage #VANC #VANP will @ShowVar[GirlfriendName] be assigning you chores?
+[yes]@SystemMessage #VANC #VANP Wonderful @SetFlag(AssignedChores)
+[no]@SystemMessage #VANC #VANP Too bad, I was hoping @ShowVar[GirlfriendName] could play a small part in your submission.
+@DifferentAnswer @SystemMessage #VANC #VANP Yes or no?
+
 @SystemMessage #VANC #VANP Next..
 @SystemMessage #VANC #VANP Do you live in an apartment or house?
 [apartment]@SystemMessage #VANC #VANP I see.. @SetFlag(ApartmentActive)
@@ -52,18 +58,18 @@
 [no]@SystemMessage #VANC #VANP Okay then..
 @DifferentAnswer @SystemMessage #VANC #VANP #GNMYesOrNo
 @SystemMessage #VANC #VANP I'm gonna ask you how many rooms are in your #Home
-@SystemMessage #VANC #VANP You can choose between 1-5 not including kitchen and bathroom
+@SystemMessage #VANC #VANP You can choose between 1-5 not including the kitchen or bathroom
 @SystemMessage #VANC #VANP If you have more than 5 rooms or some of them are very small consider adding two of them together
 @SystemMessage #VANC #VANP I also suggest that you draw a schematic of your #Home and add it to the folder named Home
 @SystemMessage #VANC #VANP The folder should be located inside GNMImages
 @SystemMessage #VANC #VANP You can name the image whatever you want
 @SystemMessage #VANC #VANP Just make sure that there is only 1 image inside the folder
 @SystemMessage #VANC It can look something like this @ShowImage[\GNMImages\Home\*.*]
-@SystemMessage #VANC Notice how each room are assigned a number, except for the kitchen and bathroom. @ShowImage[\GNMImages\Home\*.*]
+@SystemMessage #VANC Notice how each room is assigned a number, except for the kitchen and bathroom. @ShowImage[\GNMImages\Home\*.*]
 @SystemMessage #VANC Also notice how 3 rooms have the same number because they were added together.. @ShowImage[\GNMImages\Home\*.*]
 (Rooms)
 @SystemMessage #VANC #VANP How many rooms in your #Home are you responsible for cleaning?
-[1]@SystemMessage #VANC #VANP You will find yourself often cleaing that one room @SetFlag(1Room) 
+[1]@SystemMessage #VANC #VANP You will find yourself often cleaning that one room @SetFlag(1Room) 
 [2]@SystemMessage #VANC #VANP As a proper slave you should take care of more than two rooms @SetFlag(2Room) 
 [3]@SystemMessage #VANC #VANP Three rooms sounds decent @SetFlag(3Room)
 [4]@SystemMessage #VANC #VANP You will keep them clean from now one @SetFlag(4Room) 

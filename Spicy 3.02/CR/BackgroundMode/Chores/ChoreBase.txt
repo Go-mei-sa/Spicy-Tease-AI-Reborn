@@ -9,6 +9,17 @@
 [yes,chore]@SystemMessage #VANC #VANP @RT(So,Okay,Well then,Hmm,Let's see) #SlaveName
 [no,return,exit]@NullResponse @Goto(End)
 @DifferentAnswer @SystemMessage #VANC #VANP Chore or return?
+
+(assignedorpick)
+@Flag(AssignedChores) @SystemMessage #VANC Do you have a chore already CHOSEN by @ShowVar[GirlfriendName] or should I PICK one for you? @ShowImage[\GNMImages\GNMBackground\TrashBin.*]
+[yes,chosen]@SystemMessage #VANC #VANP you're lucky to have such an attentive #DomHonorific in #DomName  you #SlaveName
+[no,pick]@goto(Chore)
+@DifferentAnswer @SystemMessage #VANC #VANP assigned, or shall I pick?@Goto(assignedorpick)
+
+@Flag(AssignedChores) @SystemMessage #VANC well lets hear a little about this chore of yours... @ShowImage[\GNMImages\FFriends\Colleen\*]
+@Flag(AssignedChores) @NullResponse @CallReturn(CR\BackgroundMode\Chores\AssignedChore.txt)
+@NullResponse @Goto(FirstChoreRun)
+
 (Chore)
 @NullResponse @DeleteFlag(Chore)
 @SystemMessage #VANC #VANP @RT(What chore to give you next..,What chore should you do..,Let's see if we can find a chore for you..)
