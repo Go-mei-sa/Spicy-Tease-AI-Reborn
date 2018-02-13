@@ -1,4 +1,4 @@
-@SystemMessage #VANC #VANP @RT(Lets rattle your #GNMCock a little,Lets make your #GNMCock jump a little,Lets see if we can awaken the princess,Lets play a little,I have something fun for you #GNMEmoteHappy)
+@SystemMessage #VANC #VANP @RT(Lets rattle your #GNMCock a little,Lets make your #GNMCock jump a little,Lets see if we can awaken the princess,Lets play a little,I have something fun for you #GNMEmoteHappy )
 @SystemMessage #VANC #VANP @RT(Just watch this little slide show,Just enjoy this little show,Just sit back and relax,Hang back there and watch this) while you fondle your #GNMBalls
 (SlideShow1)
 @NullResponse @ShowImage @Chance90(SlideShow1)
