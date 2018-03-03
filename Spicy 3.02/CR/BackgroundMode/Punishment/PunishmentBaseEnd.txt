@@ -83,6 +83,7 @@ Cya #SlaveName #DT4 @DeleteFlag(D4Punisher)
 @NullResponse @CheckFlag(H1Complete)
 @NullResponse @CheckFlag(H2Complete)
 @NullResponse @CheckFlag(H3Complete)
+@NullResponse @CheckFlag(B1Complete)
 @NullResponse @Goto(Bug)
 (PunishmentFailed)
 @SystemMessage [Nurse]: @RT(You failed your punishment,You didn't complete your punishment,You didn't go through with your punishment) #SubName #Nurse @DeleteFlag(PunishmentFailed)
@@ -219,6 +220,12 @@ Cya #SlaveName #DT4 @DeleteFlag(D4Punisher)
 @NotFlag(HasChastity) @SystemMessage [Nurse]: I know its not easy being given no-touch days like that! #Nurse
 @NotFlag(HasChastity) @SystemMessage [Nurse]: But keep your head cool and you'll make it #Nurse
 @NotFlag(HasChastity) @SystemMessage [Nurse]: If it gets bad then remember that ice or a shower is great! #Nurse @Goto(Continue)
+(B1Complete)
+@SystemMessage [Nurse]: Oh my #Nurse @DeleteFlag(B1Complete) @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(130,180)]
+@SystemMessage [Nurse]: @RT(I know your tummy must be feeling wierd right now,I know that was humiliating) #Nurse
+@SystemMessage [Nurse]: @RT(But keep your head cool and you'll make it,But stay calm and you should be fine) #Nurse
+@SystemMessage [Nurse]: @RT(you'll start feeling more normal soon,you might want to stay near the toilet though) #Nurse 
+@SystemMessage [Nurse]: @RT(Gurgle gurgle #GNMLaugh,  I wonder if I'll get to administer one of those one day) #Nurse @Goto(Continue)
 (Bug)
 @SystemMessage It seems a bug has occured.. #Nurse
 @SystemMessage I command you to report to Genome on Milovana.com that a bug occured with a punishment #Nurse

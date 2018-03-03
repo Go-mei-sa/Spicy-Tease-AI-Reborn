@@ -97,6 +97,7 @@
 @NullResponse @Goto(PunishmentBaseIntro)
 (Reasons)
 @SystemMessage [Miss A]: Lets see if there is any specific reasons to why you've been given punishment points.. #ReceptionChat @SetFlag(PunishmentActive)
+@Flag(BadExerciseEffort) @SystemMessage [Miss A]: @RT(Failure to complete your exercises properly, Not putting sufficient effort while exercising, Being lazy while working outt, Not meeting #DomHonorific #DomName's exercise standard) @DeleteFlag(BadExerciseEffort)
 @Flag(BadChores) @SystemMessage [Miss A]: @RT(Failure to complete chores in a timely manner,Unfinished chores,Failure to do chores,Poor attitudes regarding chores,Failed to complete chores..) #ReceptionBusyPC @DeleteFlag(BadChores)
 @Flag(BadCum) @SystemMessage [Miss A]: @RT(Unauthorized ejaculation,Cumming without permission,) #ReceptionBusyPC @DeleteFlag(BadCum)
 @Flag(BadMouth) @SystemMessage [Miss A]: @RT(Filthy mouth,Talking back,Bad mouthing,Undesired talking,Failed to request permission to talk,Talking out of terms..) #ReceptionBusyPC @DeleteFlag(BadMouth)
@@ -128,6 +129,8 @@
 [soft]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Soft)
 [medium]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Medium)
 [hard]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Hard)
+[Brutal]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Brutal)
+[Extreme]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Extreme)
 @DifferentAnswer @SystemMessage [Miss A]: Soft, medium or hard? #ReceptionChat
 @SystemMessage [Miss A]: Lets go with a hard one then.. #ReceptionChat @Goto(Hard)
 (PLevel4)
@@ -136,6 +139,8 @@
 [soft]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Soft)
 [medium]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Medium)
 [hard]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Hard)
+[Brutal]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Brutal)
+[Extreme]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Extreme)
 @DifferentAnswer @SystemMessage [Miss A]: Soft, medium or hard? #ReceptionChat
 @SystemMessage [Miss A]: Lets go with a hard one then.. #ReceptionChat @Goto(Hard)
 (PLevel3)
@@ -144,12 +149,16 @@
 [soft]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Soft)
 [medium]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Medium)
 [hard]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Hard)
+[Brutal]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Brutal)
+[Extreme]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Extreme)
 @DifferentAnswer @SystemMessage [Miss A]: Soft, medium or hard? #ReceptionChat
 @SystemMessage [Miss A]: Lets go with a medium one then.. #ReceptionChat @Goto(Medium)
 (PLevel2)
 @SystemMessage [Miss A]: You can request a soft or medium punishment #ReceptionChat @TimeOut(10)
 [soft]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Soft)
 [medium]@SystemMessage [Miss A]: Setting it up.. #ReceptionChat @Goto(Medium)
+[Brutal]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Brutal)
+[Extreme]@SystemMessage [Miss A]: a glutton for punishment...Setting it up.. #ReceptionChat @Goto(Extreme)
 @DifferentAnswer @SystemMessage [Miss A]: Soft, medium? #ReceptionChat
 @SystemMessage [Miss A]: Lets go with a soft one then.. #ReceptionChat @Goto(Soft)
 (PLevel1)
@@ -161,7 +170,9 @@
 (Hard)
 @NullResponse @Goto(H1,H2,H3)
 (Brutal)
+@NullResponse @Goto(B1)
 (Extreme)
+@NullResponse @Goto(E1,E2,E3)
 (S1) //LineWriting (Done)
 @NullResponse @CallReturn(CR\BackgroundMode\Punishment\Punishments\S1.txt)
 @NullResponse @Goto(PunishmentBaseIntro)
@@ -213,3 +224,20 @@
 (H3) //Chastity (Done)
 @NullResponse @CallReturn(CR\BackgroundMode\Punishment\Punishments\H3.txt)
 @NullResponse @Goto(PunishmentBaseIntro)
+(B1) //enema
+@NullResponse @CallReturn(CR\Punishment\enemapunishment.txt)
+@NullResponse @Goto(PunishmentBaseIntro)
+(E1)
+@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,150)]
+@NullResponse @CallReturn(CR\Punishment\ParachuteOrBallBusting.txt)
+@NullResponse @Goto(PunishmentBaseIntro)
+(E2)
+@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,150)]
+@NullResponse @CallReturn(CR\Punishment\GNMBallBusting.txt)
+@NullResponse @Goto(PunishmentBaseIntro)
+(E3)
+@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,150)]
+@NullResponse @CallReturn(CR\Punishment\GDSmallBallBusting.txt)
+@NullResponse @Goto(PunishmentBaseIntro)
+
+
