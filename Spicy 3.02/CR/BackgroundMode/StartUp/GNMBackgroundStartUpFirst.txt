@@ -314,7 +314,7 @@
 (Continue1)
 @SystemMessage #VANC #VANP As you should know
 @SystemMessage #VANC #VANP A slave doesn't have "personal" information since a slave isn't really a person..
-@SystemMessage #VANC #VANP As a token of complete surrender I need the phonenumber and name of 3 people
+@SystemMessage #VANC #VANP As a token of complete surrender I need the phone number and name of 3 people
 @SystemMessage #VANC #VANP Preferably girls that don't know about your fetish
 (InputBlackmail)
 @SystemMessage #VANC #VANP So tell me the full name of the first person @InputVar[BlackmailName1]
