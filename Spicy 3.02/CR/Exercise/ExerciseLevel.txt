@@ -1,4 +1,32 @@
 @NullResponse @RapidCodeOn
+
+@NullResponse @Variable[ExerciseLevelMastered]>[4] @Goto(UpLevel)
+@NullResponse @Variable[ExerciseLevelFailed]>[4] @Goto(DownLevel)
+@Goto(End)
+(UpLevel)
+@RapidCodeOff
+@SystemMessage #VANC #VANP #SlaveName, I've noticed you've been doing really well in your workouts lately @SetVar[ExerciseLevel]=[ExerciseLevel]+1
+@SystemMessage #VANC #VANP RT(That makes me wet, That gets me excited, It looks like its beginning to pay off) @Variable[ExerciseLevel]>10 @SetVar[ExerciseLevel]=10
+@SystemMessage #VANC #VANP RT(Its time to move you to the next level, I think you can step it up a notch for #DomHonorific #DomName, I want to see if you can take a little more for #DomName) #GNMSmile @SetVar[ExerciseLevelMastered]=0
+@SetVar[ExerciseLevelFailed]=0
+@Goto(End)
+
+(Downlevel)
+@SetVar[ExerciseLevel]=[ExerciseLevel]-1
+@Variable[ExerciseLevel]<1 @SetVar[ExerciseLevel]=1
+@SetVar[ExerciseLevelMastered]=0
+@SetVar[ExerciseLevelFailed]=0
+@SetFlag[BadExerciseEffort]
+@Variable[GNMPPoints]=[GNMPPoints]+100
+@RapidCodeOff
+@SystemMessage #VANC #VANP #SlaveName, we need to talk about something...
+@SystemMessage #VANC #VANP #DomHonorific #DomName and I have noticed you're not able to keep up with the workouts you're assigned.
+@SystemMessage #VANC #VANP RT(That's disappointing,I'm a little embarrassed for you,Your #Domhonorific deserves better)
+@SystemMessage #VANC #VANP RT(I care about you,#DomHonorific #DomName wants her #Slave to succeed,We want to make sure you make progress) So I'm dropping you down a level.
+@SystemMessage #VANC #VANP Of course,RT(to maintain discipline, to keep you incentivized, to provide motivation) , I'm assigning you a special Punishment.
+@SystemMessage #VANC #VANP RT(My decision on this is final,Try not to disappoint #DomHonorific #DomName,You're welcome) #SlaveName
+@Goto(End)
+
 @Variable[ExerciseXP]>=[2700] @NullResponse @SetVar[ExerciseLevel]=[10] @Goto(End)
 @Variable[ExerciseXP]>=[2400] @NullResponse @SetVar[ExerciseLevel]=[9] @Goto(End)
 @Variable[ExerciseXP]>=[2100] @NullResponse @SetVar[ExerciseLevel]=[8] @Goto(End)

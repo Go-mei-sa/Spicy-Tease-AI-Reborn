@@ -1,6 +1,61 @@
 @SystemMessage #VANC #VANP Get @RT(naked,ready,ready,ready) slave! @SetVar[NrExercise]=[0]
-@SystemMessage #VANC #VANP We're starting in a second @Wait(15) @LockImages
+@SystemMessage #VANC #VANP We're starting in a second @Wait(5) @SetVar[TempExercises]=[10]+[ExerciseLevel] @LockImages
+@DeleteFlag[exdog1]
+@DeleteFlag[exdog2a]
+@DeleteFlag[exdog2b]
+@DeleteFlag[explank1]
+@DeleteFlag[exabs1]
+@DeleteFlag[exabs2]
+@DeleteFlag[exabs3]
+@DeleteFlag[exabs4]
+@DeleteFlag[exabs5]
+@DeleteFlag[exabs6]
+@DeleteFlag[exgif1]
+@DeleteFlag[exgif2]
+@DeleteFlag[exgif3]
+@DeleteFlag[exgif4]
+@DeleteFlag[exgif5]
+@DeleteFlag[exgif6]
+@DeleteFlag[exleg1]
+@NullResponse @DeleteFlag[exleg2]
+@NullResponse @DeleteFlag[exleg3]
+@NullResponse @DeleteFlag[exleg4]
+@NullResponse @DeleteFlag[expushups1]
+@NullResponse @DeleteFlag[expushups2]
+@NullResponse @DeleteFlag[exwidepushups]
+@NullResponse @DeleteFlag[exsideplank]
+@NullResponse @DeleteFlag[explank1]
+@NullResponse @DeleteFlag[exsquat]
+@NullResponse @DeleteFlag[exdeepsquat]
+@NullResponse @DeleteFlag[exsquathold]
+@NullResponse @DeleteFlag[excontinue3]
+@NullResponse @DeleteFlag[excontinue4] @DeleteFlag[excontinue5] @DeleteFlag[excontinue6]
+
+
+(exerciseloop)
+
+@Variable[NrExercise]=[5] @ShowImage[\GNMImages\Exercise\Break\*] @SystemMessage #VANC Take a 60 second break to grab a drink of water @Wait(60)
+@Variable[NrExercise]=[10] @ShowImage[\GNMImages\Exercise\Break\*] @SystemMessage #VANC Take a 60 second break to grab a drink of water @Wait(60)
+@Variable[NrExercise]=[15] @ShowImage[\GNMImages\Exercise\Break\*] @SystemMessage #VANC Take a 60 second break to grab a drink of water @Wait(60)
+@Variable[NrExercise]=[20] @ShowImage[\GNMImages\Exercise\Break\*] @SystemMessage #VANC Take a 60 second break to grab a drink of water @Wait(60)
+@Variable[NrExercise]=[25] @ShowImage[\GNMImages\Exercise\Break\*] @SystemMessage #VANC Take a 60 second break to grab a drink of water @Wait(60)
+
+@Variable[NrExercise]<[1] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Dog1,Dog2a,Dog2b)
+@Variable[NrExercise]<[2] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Abs1,Abs2,abs3)
+@Variable[NrExercise]<[3] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Squat,SquatHold,DeepSquat)
+@Variable[NrExercise]<[4] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Gif1,Gif2,Gif3)
+@Variable[NrExercise]<[5] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(PushUps1,WidePushUps,PushUps2)
+@Variable[NrExercise]<[6] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Leg4,Leg3,Leg2,Leg1)
+@Variable[NrExercise]<[7] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(SidePlank,plank1)
+@Variable[NrExercise]<[8] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Gif4,Gif5,Gif6)
+@Variable[NrExercise]<[9] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Abs4,Abs5,Abs6)
+
+@Variable[NrExercise]<[TempExercises] @ShowImage[\GNMImages\Exercise\Misc\*] @Goto(Dog1,Dog2a,Dog2b,Plank1,Abs1,Abs2,Abs4,Abs5,Abs6,Continue3,Continue4,Continue5,Continue6,gif1,gif2,gif3,gif4,gif5,gif6,Leg4,Leg3,Leg2,Leg1,PushUps1,WidePushUps,PushUps2,SidePlank,Squat,SquatHold,DeepSquat)
+@Goto(end2)
+
 (Dog1)
+@Flag(exdog1) @Goto(exerciseloop)
+@SetFlag(exdog1)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @SystemMessage #VANC Stand like this @ShowImage[\GNMImages\Exercise\Dog\1.jpg]
 @SystemMessage #VANC Hold it until you hear my bell
@@ -31,8 +86,10 @@
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @SystemMessage #VANC Take a short break @Wait(20) 
-@NullResponse @Goto(Dog2a,Dog2b)
+@Goto(exerciseloop)
 (Dog2a)
+@Flag(exdog2a) @Goto(exerciseloop)
+@SetFlag(exdog2a)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Get down like this @ShowImage[\GNMImages\Exercise\Dog2\1.jpg]
 @SystemMessage #VANC First beep bring your leg up
@@ -49,8 +106,8 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
-@SystemMessage #VANC Now the other leg..
+@SystemMessage #VANC Take a short break  @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
+@SystemMessage #VANC Now the other leg..  @ShowImage[\GNMImages\Exercise\Dog2\1.jpg]
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -64,7 +121,10 @@
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @SystemMessage #VANC Take a short break @Wait(20)
+@Goto(exerciseloop)
 (Dog2b)
+@Flag(exdog2b) @Goto(exerciseloop)
+@SetFlag(exdog2b)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Get down like this @ShowImage[\GNMImages\Exercise\Dog2\2.gif]
 @SystemMessage #VANC First beep bring your leg up
@@ -81,8 +141,8 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
-@SystemMessage #VANC Now the other leg..
+@SystemMessage #VANC Take a short break  @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
+@SystemMessage #VANC Now the other leg.. @ShowImage[\GNMImages\Exercise\Dog2\2.gif]
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -95,11 +155,14 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
+@SystemMessage #VANC Take a short break @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
+@Goto(exerciseloop)
 (Plank1)
+@Flag(explank1) @Goto(exerciseloop)
+@SetFlag(explank1)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
-@SystemMessage #VANC Now we're gonna do the plank @ShowImage[\GNMImages\Exercise\Plank\1.jpg]
-@SystemMessage #VANC Get into this position 
+@SystemMessage #VANC Now we're gonna do the plank @ShowImage[\GNMImages\Exercise\Misc\*] 
+@SystemMessage #VANC Get into this position @ShowImage[\GNMImages\Exercise\Plank\1.jpg]
 @SystemMessage #VANC We're gonna do it 3 times
 @SystemMessage #VANC You will hear my bell in a moment
 @SystemMessage #VANC That means take the position
@@ -118,7 +181,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
+@SystemMessage #VANC Take a short break @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
 @SystemMessage #VANC Again @ShowImage[\GNMImages\Exercise\Plank\2.jpg] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -131,7 +194,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
+@SystemMessage #VANC Take a short break @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
 @SystemMessage #VANC Again @ShowImage[\GNMImages\Exercise\Plank\3.jpg] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -144,7 +207,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
+@SystemMessage #VANC Take a short break @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
 @SystemMessage #VANC Again but bring your left in and out @ShowImage[\GNMImages\Exercise\Plank\4.gif] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(70)
@@ -157,7 +220,7 @@
 @Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(35)
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
+@SystemMessage #VANC Take a short break @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
 @SystemMessage #VANC Again but now your right leg in and out @ShowImage[\GNMImages\Exercise\Plank\4.gif] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(70)
@@ -170,9 +233,12 @@
 @Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(35)
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Plank\4.gif] @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
+@Goto(exerciseloop)
 (Abs1)
+@Flag(exabs1) @Goto(exerciseloop)
+@SetFlag(exabs1)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
-@SystemMessage #VANC Next we're going to work on your abs
+@SystemMessage #VANC Next we're going to work on your abs @ShowImage[\GNMImages\Exercise\Misc\*]
 @SystemMessage #VANC Get into this position and simply hold it.. @ShowImage[\GNMImages\Exercise\Abs\1.jpg]
 @SystemMessage #VANC Stop when you hear my bell
 @SystemMessage #VANC Again we'll do it 3 times.. so 6 bells in total.
@@ -188,8 +254,8 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
-@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
+@SystemMessage #VANC Take a short break @Wait(20) @ShowImage[\GNMImages\Exercise\Misc\*]
+@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]  @ShowImage[\GNMImages\Exercise\Abs\1.jpg]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
@@ -201,8 +267,8 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Take a short break @Wait(20)
-@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
+@SystemMessage #VANC Take a short break @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
+@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]  @ShowImage[\GNMImages\Exercise\Abs\1.jpg]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
@@ -214,14 +280,16 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
+@Goto(exerciseloop)
 (Abs2)
+@Flag(exabs2) @Goto(exerciseloop)
+@SetFlag(exabs2)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Get into this position @ShowImage[\GNMImages\Exercise\Abs\2.jpg]
-@SystemMessage #VANC With each beep, bringer your upper body as high as you can and then back down
+@SystemMessage #VANC With each beep, bring your upper body as high as you can and then back down
 @SystemMessage #VANC Stop when you hear the bell
-@SystemMessage #VANC Switch side
+@SystemMessage #VANC Switch sides
 @SystemMessage #VANC Wait for the beat
-@SystemMessage #VANC Etc.
 @SystemMessage #VANC 6 times in total!
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
@@ -235,7 +303,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Change side..
+@SystemMessage #VANC change sides..
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -248,7 +316,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Change side..
+@SystemMessage #VANC change sides..
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -261,7 +329,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Change side..
+@SystemMessage #VANC change sides..
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -274,7 +342,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Change side..
+@SystemMessage #VANC change sides..
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -287,7 +355,7 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
-@SystemMessage #VANC Change side..
+@SystemMessage #VANC change sides..
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
@@ -300,7 +368,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
+@Goto(exerciseloop)
 (Abs3)
+@Flag(exabs3) @Goto(exerciseloop)
+@SetFlag(exabs3)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC From this position @ShowImage[\GNMImages\Exercise\Abs\3.jpg]
 @SystemMessage #VANC On the first beep raise your legs straight up
@@ -342,7 +413,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Abs4)
+@Flag(exabs4) @Goto(exerciseloop)
+@SetFlag(exabs4)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC With each beep bring your leg up @ShowImage[\GNMImages\Exercise\Abs\4.jpg]
 @SystemMessage #VANC Alternating legs
@@ -384,9 +458,14 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(30)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(20)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Abs5)
+@Flag(exabs5) @Goto(exerciseloop)
+@SetFlag(exabs5)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
-@SystemMessage #VANC Same exercise but keep your legs together @ShowImage[\GNMImages\Exercise\Abs\5.jpg]
+@SystemMessage #VANC With each beep bring Both your legs up @ShowImage[\GNMImages\Exercise\Abs\5.jpg]
+@SystemMessage #VANC Never allow any of your legs to touch the ground until the exercise ends with a beep
+@SystemMessage #VANC 3 times in total
 @SystemMessage #VANC Beep = up
 @SystemMessage #VANC Next beep = down
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
@@ -425,10 +504,12 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
-@NullResponse @If[ExerciseLevel]>=[6]Then(Continue3) @Goto(Gif1)
+@Goto(exerciseloop)
 (Continue3)
+@Flag(excontinue3) @Goto(exerciseloop)
+@SetFlag(excontinue3)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
-@SystemMessage #VANC Now a final few ab exercises
+@SystemMessage #VANC Now a few more ab exercises @ShowImage[\GNMImages\Exercise\Misc\*]
 @SystemMessage #VANC I want you to keep going with each exercise until the image changes and you hear a bell
 @SystemMessage #VANC GO! @ShowImage[\GNMImages\Exercise\Abs\6.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
@@ -436,30 +517,53 @@
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC next one! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @ShowImage[\GNMImages\Exercise\Abs\7.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC next one! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @ShowImage[\GNMImages\Exercise\Abs\8.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC next one! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @ShowImage[\GNMImages\Exercise\Abs\9.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC Break! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Gif1)
+@Flag(exgif1) @Goto(exerciseloop)
+@SetFlag(exgif1)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Next I'll be showing you different gifs so everything should be clear to you.. @ShowImage[\GNMImages\Exercise\Gifs\1.gif]
 @SystemMessage #VANC Use the beeps to pace yourself
-@SystemMessage #VANC Alternate side 
+@SystemMessage #VANC Alternate sides
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(70)
@@ -471,8 +575,8 @@
 @Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(40)
 @Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(35)
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(30)
-@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
-@SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
+@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]  @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
+@SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3] @ShowImage[\GNMImages\Exercise\Gifs\1.gif]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(65)
@@ -483,8 +587,8 @@
 @Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(40)
 @Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(35)
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(30)
-@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
-@SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
+@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]  @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
+@SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3] @ShowImage[\GNMImages\Exercise\Gifs\1.gif]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(65)
@@ -495,10 +599,13 @@
 @Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(40)
 @Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(35)
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\1.gif] @Wait(30)
-@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]  @ShowImage[\GNMImages\Exercise\Misc\*] @Wait(20)
+@Goto(exerciseloop)
 (Gif3)
+@Flag(exgif3) @Goto(exerciseloop)
+@SetFlag(exgif3)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
-@SystemMessage #VANC Alternate side @ShowImage[\GNMImages\Exercise\Gifs\3.gif]
+@SystemMessage #VANC Alternate sides @ShowImage[\GNMImages\Exercise\Gifs\3.gif]
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\3.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\3.gif] @Wait(70)
@@ -535,7 +642,10 @@
 @Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\3.gif] @Wait(35)
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\3.gif] @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Gif2)
+@Flag(exgif2) @Goto(exerciseloop)
+@SetFlag(exgif2)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Here I will tell you when to switch sides @ShowImage[\GNMImages\Exercise\Gifs\2.gif]
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
@@ -616,7 +726,10 @@
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\2.gif] @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
 @SystemMessage #VANC Other side now..
+@Goto(exerciseloop)
 (Gif4)
+@Flag(exgif4) @Goto(exerciseloop)
+@SetFlag(exgif4)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC I will tell you when to switch sides @ShowImage[\GNMImages\Exercise\Gifs\4.gif]
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
@@ -696,72 +809,129 @@
 @Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\4.gif] @Wait(35)
 @Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\4.gif] @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
-@NullResponse @If[ExerciseLevel]>=[6]Then(Continue4) @Goto(Leg4)
+@Goto(exerciseloop)
 (Continue4)
+@Flag(excontinue4) @Goto(exerciseloop)
+@SetFlag(excontinue4)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
-@SystemMessage #VANC A few other exercises now!
+@SystemMessage #VANC A few other Leg exercises now!
+@SystemMessage #VANC Follow along with the Gif images.
 @SystemMessage #VANC Left leg! @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(30)
+ 
 @SystemMessage #VANC Right leg! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\5.gif] @Wait(30)
 @SystemMessage #VANC Left leg! @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(30)
 @SystemMessage #VANC Right leg!
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\6.gif] @Wait(30)
 @SystemMessage #VANC Left leg! @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(30)
 @SystemMessage #VANC Right leg! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\7.gif] @Wait(30)
 @SystemMessage #VANC Left side! @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(30)
 @SystemMessage #VANC Right side! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\8.gif] @Wait(30)
 @SystemMessage #VANC Left leg! @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(60)
 @Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(30)
 @SystemMessage #VANC Right leg! @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @Variable[ExerciseLevel]=[10] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(75)
 @Variable[ExerciseLevel]=[9] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(70)
 @Variable[ExerciseLevel]=[8] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(65)
 @Variable[ExerciseLevel]=[7] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(60)
-@Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(55) 
+@Variable[ExerciseLevel]=[6] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(55)
+@Variable[ExerciseLevel]=[5] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(50)
+@Variable[ExerciseLevel]=[4] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(45)
+@Variable[ExerciseLevel]=[3] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(40)
+@Variable[ExerciseLevel]=[2] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(35)
+@Variable[ExerciseLevel]=[1] @ShowImage[\GNMImages\Exercise\Gifs\9.gif] @Wait(30) 
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
+@Goto(exerciseloop)
 (Leg4)
+@Flag(exleg4) @Goto(exerciseloop)
+@SetFlag(exleg4)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Take some deep breaths @ShowImage[\GNMImages\Exercise\Breathe\1.gif]
 @SystemMessage #VANC Break 1 minute  @ShowImage[\GNMImages\Exercise\Breathe\1.gif] @Wait(60)
@@ -803,7 +973,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Leg3)
+@Flag(exleg3) @Goto(exerciseloop)
+@SetFlag(exleg3)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC From a push up position @ShowImage[\GNMImages\Exercise\Legs\2.jpg]
 @SystemMessage #VANC pull your leg under you without your foot touching the ground 
@@ -844,8 +1017,12 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Leg2)
+@Flag(exleg2) @Goto(exerciseloop)
+@SetFlag(exleg2)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
+@SystemMessage #VANC Lets do some Leg Squats
 @SystemMessage #VANC With the first beep bring your leg fourth @ShowImage[\GNMImages\Exercise\Legs\3.jpg]
 @SystemMessage #VANC With the second beep bring the same leg to the side
 @SystemMessage #VANC With the third beep put the leg behing you
@@ -886,7 +1063,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Leg1)
+@Flag(exleg1) @Goto(exerciseloop)
+@SetFlag(exleg1)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Get into this position @ShowImage[\GNMImages\Exercise\Legs\4.jpg]
 @SystemMessage #VANC Raise one leg and hold it until you hear my bell
@@ -962,7 +1142,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (PushUps1)
+@Flag(expushups1) @Goto(exerciseloop)
+@SetFlag(expushups1)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Time to do push ups! @ShowImage[\GNMImages\Exercise\PushUps\1.jpg]
 @SystemMessage #VANC First beep go down
@@ -1003,7 +1186,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (WidePushUps)
+@Flag(exwidepushups) @Goto(exerciseloop)
+@SetFlag(exwidepushups)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Let's some wide push ups @ShowImage[\GNMImages\Exercise\PushUps\2.jpg]
 @SystemMessage #VANC First beep go down
@@ -1044,7 +1230,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (PushUps2)
+@Flag(expushups2) @Goto(exerciseloop)
+@SetFlag(expushups2)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Regular push ups again @ShowImage[\GNMImages\Exercise\PushUps\3.jpg]
 @SystemMessage #VANC Continue until you hear my bell @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
@@ -1083,8 +1272,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
-@NullResponse @If[ExerciseLevel]>=[6]Then(Continue5) @Goto(SidePlank)
+@Goto(exerciseloop)
 (Continue5)
+@Flag(excontinue5) @Goto(exerciseloop)
+@SetFlag(excontinue5)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Take some deep breaths @ShowImage[\GNMImages\Exercise\Breathe\1.gif]
 @SystemMessage #VANC Break 1 minute  @Wait(60)
@@ -1095,6 +1286,11 @@
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC Short break @Wait(20) @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @NullResponse @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @SystemMessage #VANC Continue until you hear my bell @ShowImage[\GNMImages\Exercise\PushUps\5.jpg] @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
@@ -1103,6 +1299,11 @@
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC Short break @Wait(20) @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
 @NullResponse @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
 @SystemMessage #VANC Continue until you hear my bell @ShowImage[\GNMImages\Exercise\PushUps\6.jpg] @PlayAudio[\GNMSounds\Stroking\Metronome\40 bpm.mp3]
@@ -1111,8 +1312,16 @@
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC Short break @Wait(20) @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3]
+@Goto(exerciseloop)
 (SidePlank)
+@Flag(exsideplank) @Goto(exerciseloop)
+@SetFlag(exsideplank)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Lets do some side planking @ShowImage[\GNMImages\Exercise\SidePlank\1.jpg]
 @SystemMessage #VANC Rest on your lower arm
@@ -1192,7 +1401,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (Squat)
+@Flag(exsquat) @Goto(exerciseloop)
+@SetFlag(exsquat)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Lets do some squating @ShowImage[\GNMImages\Exercise\Squat\1.jpg]
 @SystemMessage #VANC First beep down
@@ -1233,7 +1445,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
-(Squat hold)
+@Goto(exerciseloop)
+(SquatHold)
+@Flag(exsquathold) @Goto(exerciseloop)
+@SetFlag(exsquathold)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Get into the squat position and hold it until you hear my bell! @ShowImage[\GNMImages\Exercise\Squat\2.jpg]
 @SystemMessage #VANC Begin!
@@ -1272,7 +1487,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
+@Goto(exerciseloop)
 (DeepSquat)
+@Flag(exdeepsquat) @Goto(exerciseloop)
+@SetFlag(exdeepsquat)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Now for the deep squats! @ShowImage[\GNMImages\Exercise\Squat\3.jpg]
 @SystemMessage #VANC First beep all the way down
@@ -1313,8 +1531,10 @@
 @Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
 @Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @NullResponse @PlayAudio[\GNMSounds\SpecialSounds\Bell.mp3] @Wait(20)
-@NullResponse @If[ExerciseLevel]>=[6]Then(Continue6) @Goto(End2)
+@Goto(exerciseloop)
 (Continue6)
+@Flag(excontinue6) @Goto(exerciseloop)
+@SetFlag(excontinue6)
 @NullResponse @ChangeVar[NrExercise]=[NrExercise]+[1]
 @SystemMessage #VANC Almost there!
 @SystemMessage #VANC Keep doing normal squats until you hear my bell @ShowImage[\GNMImages\Exercise\Squat\6.gif]
@@ -1323,35 +1543,61 @@
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC again @ShowImage[\GNMImages\Exercise\Squat\7.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC again @ShowImage[\GNMImages\Exercise\Squat\8.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
 @SystemMessage #VANC again @ShowImage[\GNMImages\Exercise\Squat\9.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
-@SystemMessage #VANC Final exericse! @ShowImage[\GNMImages\Exercise\Squat\10.gif]
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
+@SystemMessage #VANC Final exercise! @ShowImage[\GNMImages\Exercise\Squat\10.gif]
 @Variable[ExerciseLevel]=[10] @NullResponse @Wait(75)
 @Variable[ExerciseLevel]=[9] @NullResponse @Wait(70)
 @Variable[ExerciseLevel]=[8] @NullResponse @Wait(65)
 @Variable[ExerciseLevel]=[7] @NullResponse @Wait(60)
 @Variable[ExerciseLevel]=[6] @NullResponse @Wait(55)
+@Variable[ExerciseLevel]=[5] @NullResponse @Wait(50)
+@Variable[ExerciseLevel]=[4] @NullResponse @Wait(45)
+@Variable[ExerciseLevel]=[3] @NullResponse @Wait(40)
+@Variable[ExerciseLevel]=[2] @NullResponse @Wait(35)
+@Variable[ExerciseLevel]=[1] @NullResponse @Wait(30)
+@Goto(exerciseloop)
 (End2)
 @SystemMessage #VANC #VANP We're at the end
 @SystemMessage #VANC #VANP You just went through @ShowVar[NrExercise] exercises
 (Ask)
-@SystemMessage #VANC #VANP How many of the many exercises do you estimate to have completed to a satisfactory level? @InputVar[ExerciseDone]
+@SystemMessage #VANC #VANP How many of the @ShowVar[NrExercise] exercises do you estimate to have completed to a satisfactory level? @InputVar[ExerciseDone]
 @Variable[ExerciseDone]>[NrExercise] @SystemMessage #VANC #VANP You can't choose a number higher than @ShowVar[NrExercise].. @Goto(Ask)
 @Variable[ExerciseDone]<[0] @SystemMessage #VANC #VANP You can't choose a number lower than 0.. @Goto(Ask)
 @Variable[ExerciseDone]>=[0] @NullResponse @Goto(Continue2)
@@ -1361,6 +1607,8 @@
 @SystemMessage #VANC #VANP 17
 @SystemMessage #VANC #VANP 22 @Goto(Ask)
 (Continue2)
+@Variable[ExerciseDone]>[NrExercise]-[2]  @ChangeVar[ExerciseLevelMastered]=[ExerciseLevelMastered]+1  //use this to only up the exercise level after mastering the current level a few times
+@Variable[NrExercise]>[ExerciseDone]+[ExerciseDone]  @ChangeVar[ExerciseLevelFailing]=[ExerciseLevelFailing]+1  //use this to drop the exercise level after not getting 1/3rd of the exercises right after a few times
 @NullResponse @ChangeVar[ExerciseDone]=[ExerciseDone]*[5]
 @NullResponse @ChangeVar[ExerciseXP]=[ExerciseXP]+[ExerciseDone]
 @SystemMessage #VANC #VANP Good job slave! @UnlockImages

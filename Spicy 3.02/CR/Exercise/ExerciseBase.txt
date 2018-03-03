@@ -8,9 +8,9 @@
 @SystemMessage #VANC #VANP Answer truthfully 
 @SystemMessage #VANC #VANP I won't punish you for failing 
 @SystemMessage #VANC #VANP Depending on your answer you earn points
-@SystemMessage #VANC #VANP I use these points to set the exercise difficuilty to a level suiting you 
+@SystemMessage #VANC #VANP I use these points to set the exercise difficulty to a level suiting you 
 @SystemMessage #VANC #VANP So don't worry if you feel like its too easy the first few times
-@SystemMessage #VANC #VANP Difficuilty will quickly rise 
+@SystemMessage #VANC #VANP Difficulty will quickly rise 
 @SystemMessage #VANC #VANP Maybe not today, but as we go 
 @SystemMessage #VANC #VANP Completing exercise also gets you rewarded 
 @SystemMessage #VANC #VANP I track how many times you complete exercise for each 7 days  @SetDate(ExercisePeriod, 0 Hours)
@@ -24,6 +24,8 @@
 @SystemMessage #VANC #VANP You can only report for exercise every 20 hours 
 @SystemMessage #VANC #VANP The more visits you have per 7 day cycle the more I will reward you
 @NullResponse @SetVar[ExerciseLevel]=[1]
+@NullResponse @SetVar[ExerciseLevelMastered]=0
+@NullResponse @SetVar[ExerciseLevelFailed]=0
 @NullResponse @Goto(StartExercise)
 (ExerciseFirst)
 @NullResponse @CallReturn(CR\Exercise\ExerciseLevel.txt)
