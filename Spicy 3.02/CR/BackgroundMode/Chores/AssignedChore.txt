@@ -23,7 +23,7 @@
 @DifferentAnswer @SystemMessage #VANC #VANP #GNMYesOrNo
 @Variable[AssignedChoreKinky]>=[#Random(2,11)] @NullResponse @Goto(Toys)
 @SystemMessage #VANC #VANP Okay then 
-@SystemMessage #VANC #VANP You can go ahead and start with the Task for @showvar(GirlfriendName).. 
+@SystemMessage #VANC #VANP You can go ahead and start with the Task for @ShowVar[GirlfriendName].. 
 @SystemMessage #VANC #VANP When you're done return to me and say 'done' @FollowUp15(@SystemMessage #VANC #VANP Remember i'm timing you! No cheating..) @Goto(StartTimerStandard)
 
 (Toys)
@@ -110,8 +110,8 @@
 @NullResponse @CheckFlag(GNMToyLingerieBasic) @Goto(Choose)
 (GNMToyLingerieBasic)
 @SystemMessage #VANC #VANP Lets do a little dress up
-@SystemMessage #VANC I want you in these @ShowImage[\GNMImages\ToySetup\Lingerie\Panties\*.*] @Wait(10)
-@SystemMessage #VANC And wearing this @ShowImage[\GNMImages\ToySetup\Lingerie\Bra\*.*] @Wait(10)
+@SystemMessage #VANC I want you in these @ShowImage[\GNMImages\Toys\Lingerie\Panties\*.*] @Wait(10)
+@SystemMessage #VANC And wearing this @ShowImage[\GNMImages\Toys\Lingerie\Bra\*.*] @Wait(10)
 @SystemMessage #VANC #VANP Dont wear anything else #GNMGrin @Wait(15)
 @SystemMessage #VANC #VANP Are you done "slutting" yourself?
 [yes]@SystemMessage #VANC #VANP #GNMGood
@@ -124,8 +124,8 @@
 @NullResponse @CheckFlag(GNMToyLingerieAdvanced) @Goto(Choose)
 (GNMToyLingerieAdvanced)
 @SystemMessage #VANC #VANP Lets do a little dress up
-@SystemMessage #VANC I want you wearing @ShowImage[\GNMImages\ToySetup\Lingerie\GarterBelt\*.*] @Wait(15)
-@SystemMessage #VANC And ofcourse you have to also wear these @ShowImage[\GNMImages\ToySetup\Lingerie\Stockings\*.*] @Wait(15)
+@SystemMessage #VANC I want you wearing @ShowImage[\GNMImages\Toys\Lingerie\GarterBelt\*.*] @Wait(15)
+@SystemMessage #VANC And ofcourse you have to also wear these @ShowImage[\GNMImages\Toys\Lingerie\Stockings\*.*] @Wait(15)
 @SystemMessage #VANC #VANP Dont wear anything else #GNMGrin @Wait(15)
 @SystemMessage #VANC #VANP Are you done "slutting" yourself?
 [yes]@SystemMessage #VANC #VANP #GNMGood
@@ -183,7 +183,7 @@
 [no]@SystemMessage #VANC #VANP Hurry then.. @Wait(20)
 @DifferentAnswer @SystemMessage #VANC #VANP yes or no?
 @SystemMessage #VANC #VANP I've added extra time
-@SystemMessage #VANC #VANP Remember to the remove rope after you're done with the task I've assigned #GNMGrin
+@SystemMessage #VANC #VANP Remember to the remove the rope after you're done with the task I've assigned #GNMGrin
 @SystemMessage #VANC #VANP #Slave I expect this to take at least @ShowVar[CleaningTimeTemp] minutes.
 @SystemMessage #VANC #VANP You may begin.. @Goto(StartTimerStandard)
 (14)
