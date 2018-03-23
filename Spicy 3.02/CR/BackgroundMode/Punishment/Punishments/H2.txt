@@ -94,8 +94,8 @@ Today you will be given 300 strikes #DT4 @SetVar[CaningNumber]=[300] @Goto(Canin
 @Variable[CaningNumber]=[50] 50 strikes remaining.. #DT4
 (CaningBase2)
 @NullResponse @If[CaningNumber]<=[0]Then(End) @ChangeVar[CaningNumber]=[CaningNumber]-[1]
-@RT(Left thigh..,Right thigh..,Left Cheek..,Right Cheek..) #DT4 @Wait(#Random(2,4))
-Pull back! @Wait(#Random(2,7)) #DT4
+@RT(Left thigh..,Right thigh..,Left Cheek..,Right Cheek..) #DT4 @Wait(#Random(1,2))
+Pull back! @Wait(#Random(1,3)) #DT4
 @NullResponse @PlayAudio[\GNMSounds\Punishment\SpankingCane\Cane1.mp3] @Goto(CaningBase)
 (End)
 Well done #SubName #DT4
