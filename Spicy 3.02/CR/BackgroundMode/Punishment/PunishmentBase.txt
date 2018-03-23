@@ -105,9 +105,9 @@
 @NotFlagOr(BadChores,BadCum,BadMouth,BadFullTime) @SystemMessage [Miss A]: @RT(Poor attitude,Poor performance,Lack of performance,Failed to perform properly,Poor results) #ReceptionBusyPC
 @SystemMessage [Miss A]: @RT(Oh my it's good you came,Lets correct this immediately,Time to improve your behaviour) #ReceptionBusyPC
 @SystemMessage [Miss A]: First lets see who will be handling your punishment.. #ReceptionBusyPC
-@Flag(PunishmentGlitter3) @Goto(D1,D2,D3,D4)
-@Flag(PunishmentGlitter2) @Goto(D1,D2,D3)
-@Flag(PunishmentGlitter1) @Goto(D1,D2)
+@Flag(Glitter3Bought) @Goto(D1,D2,D3,D4)
+@Flag(Glitter2Bought) @Goto(D1,D2,D3)
+@Flag(Glitter1Bought) @Goto(D1,D2)
 @NullResponse @Goto(D1)
 (D1)
 @SystemMessage [Miss A]: Well it will be your #DomHonorific handling your punishment.. #ReceptionBusyPC @TempFlag(D1Punisher) @Goto(PLevel)
@@ -225,18 +225,19 @@
 @NullResponse @CallReturn(CR\BackgroundMode\Punishment\Punishments\H3.txt)
 @NullResponse @Goto(PunishmentBaseIntro)
 (B1) //enema
+@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,150)]
 @NullResponse @CallReturn(CR\Punishment\enemapunishment.txt)
 @NullResponse @Goto(PunishmentBaseIntro)
 (E1)
-@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,150)]
+@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,180)]
 @NullResponse @CallReturn(CR\Punishment\ParachuteOrBallBusting.txt)
 @NullResponse @Goto(PunishmentBaseIntro)
 (E2)
-@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,150)]
+@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,180)]
 @NullResponse @CallReturn(CR\Punishment\GNMBallBusting.txt)
 @NullResponse @Goto(PunishmentBaseIntro)
 (E3)
-@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,150)]
+@NullResponse @ChangeVar[GNMPPoints]=[GNMPPoints]-[#Random(100,180)]
 @NullResponse @CallReturn(CR\Punishment\GDSmallBallBusting.txt)
 @NullResponse @Goto(PunishmentBaseIntro)
 
