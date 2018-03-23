@@ -6,8 +6,8 @@
 @SystemMessage #VANC #VANP In case of reminders your domme should've already told you about them during a session @Goto(Confused)
 (PinboardInstructionDone)
 @SystemMessage #VANC #VANP What do you want to do?
-[read,entries,notice,pin] @NullResponse @Goto(Read)
-[return,exit,leave,end] @NullResponse @Goto(End)
+[read,entries,notice,pin,board,Read] @NullResponse @Goto(Read)
+[return,exit,leave,end,main,Main,Return] @NullResponse @Goto(End)
 @AcceptAnswer @NullResponse @Goto(Confused)
 (Read)
 @SystemMessage #VANC #VANP Okay, I am gonna read all the entries on the pinboard to you
