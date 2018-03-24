@@ -6,7 +6,7 @@ Hello #SlaveName #DT @SetVar[BlowjobLevel]=[1]
 And welcome to your first blowjob training session #DT
 Today we're gonna practice your cock sucking skills #DT
 If you are ever to serve for real #DT
-It is not uncommen for the domme to sell her slaves services to others #DT
+It is not uncommon for the domme to sell her slaves services to others #DT
 Since you wouldn't be having a job, this would be your way to earn money for your #DomHonorific #DT
 I can't tell you how many times before I've rented slaves out to gay clubs #DT
 But before any such things its important that you have some skill in the art of cocksucking.. #DT
@@ -21,7 +21,7 @@ But before any such things its important that you have some skill in the art of 
 @DifferentAnswer Are you trying to tell me something? #DT
 (Continue1)
 @Variable[ModuleVariation]=[1] @RT(In gay clubs they would wear a condom to prevent you from catching anything,The condom would protect you from diseases you might otherwise get from sucking Cock..,The condom protects against STD's) #DT
-@Variable[ModuleVariation]=[1] @RT(But it also provides a very different feel,But the condom makes the BJ more difficuilt,But the condom doesn't make the BJ easier..) #DT
+@Variable[ModuleVariation]=[1] @RT(But it also provides a very different feel,But the condom makes the BJ more difficult,But the condom doesn't make the BJ easier..) #DT
 @Variable[ModuleVariation]=[1] @RT(I believe its important for you to have tried it beforehand..,So its important you've tried it beforehand,So you need to have tried it before I send you out..) #DT
 @RT(Let me know when you're ready to continue..,Report when you're ready to continue..,Tell me when you're ready) #DT @Timeout(20,MovingOn)
 [ready,done,continue] #GNMGood #DT
@@ -32,7 +32,7 @@ Practice makes perfect so before we proceed I'm gonna remind you of all the diff
 @Variable[BlowjobLevel]<[40] Notice that due your experience there are some sounds that you might not hear at all because I don't think you're ready #DT
 @Variable[BlowjobLevel]<[40] But that doesn't mean you shouldn't at least hear them.. #DT
 This is how light sucking sounds meaning you must suck the cockhead #DT @PlayAudio[\GNMSounds\Modules\BJTraining\BJLightSucks\MediumSuck15sec.mp3] @Wait(5)
-When you hear something like this.. I want you to swirl your tounge around the cockhead until I say stop.. #DT @PlayAudio[\GNMSounds\Modules\BJTraining\BJToungeExercise\*.mp3] @Wait(5)
+When you hear something like this.. I want you to swirl your tongue around the cockhead until I say stop.. #DT @PlayAudio[\GNMSounds\Modules\BJTraining\BJToungeExercise\*.mp3] @Wait(5)
 I might also ask you to put your finger in your mouth and have you trigger the gag reflex.. #DT @PlayAudio[\GNMSounds\Modules\BJTraining\BJFingerGagging\*.mp3] @Wait(5)
 Trigger your gag reflex until I tell you to stop.. #DT
 Its important you learn to control it if you're ever to learn deep throating.. #DT
@@ -65,7 +65,7 @@ That was it.. #GNMLol #DT
 @RT(Light sucks,Stick with the beat!,Keep the beat,Light sucking to the beat,Suck lightly to the beat,Light sucking - only the cockhead..) #DT #BJLightSucks
 @NullResponse @Goto(Program1)
 (2) //ToungeExercise
-@RT(Tounge swirling,Swirl that tounge around,Keep swirling until I say stop!,Use your tounge on that cockhead!,Use the tounge!) #DT #BJToungeExercise
+@RT(Tongue swirling,Swirl that tongue around,Keep swirling until I say stop!,Use your tongue on that cockhead!,Use the tongue!) #DT #BJToungeExercise
 @RT(You can stop now,You may stop,Stop,Stop now,Go ahead and stop..,Stop stop stop..,You can go ahead and stop) #DT #BJStop
 @NullResponse @Goto(Program1)
 (3) //FingerGagging
@@ -161,7 +161,7 @@ Everytime you've edged #DT
 You're gonna rest for a short moment #DT
 When you think that I think you've had enough then ask me to 'stop'  #DT
 If I disagree #GNMGrin #DT
-We're starting from scrath #GNMLol #DT
+We're starting from scratch #GNMLol #DT
 So how many edges should you do? #DT @RapidCodeOn
 @Variable[SubEndurance]>=[7] @NullResponse @SetVar[EdgesToDo]=[#Random(12,15)]
 @Variable[SubEndurance]<=[3] @NullResponse @SetVar[EdgesToDo]=[#Random(3,6)]
@@ -192,7 +192,7 @@ You'll never know #GNMLol @DeleteFlag(Busy) #DT
 @NullResponse @CallReturn(CR\Modules\Alternative_Chastity\*.txt)
 @End
 @Info Light sucking is a simple suck over the head
-@Info Tounge exercise is moving the tounge in circles around the cockhead
+@Info Tongue exercise is moving the tongue in circles around the cockhead
 @Info Finger gagging is placing the finger in your mouth triggering the gag reflex
 @Info Hand stroking is using your hand to stroke the dildo for a few strokes
 @Info Long term deepthroat is deepthroating the cock for more than 30 seconds
