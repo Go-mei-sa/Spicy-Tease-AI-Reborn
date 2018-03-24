@@ -1,15 +1,15 @@
 @RapidCodeOn @SystemMessage Launching Spicy @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
-@NullResponse @RapidCodeOn @CallReturn(CR\BackgroundMode\StartUp\GDUpdateVars.txt)
-@RapidCodeOn @SystemMessage 20% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
-@NullResponse @RapidCodeOn @CallReturn(CR\StateCheck.txt)
-@RapidCodeOn @SystemMessage 40% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
-@NullResponse @RapidCodeOn @LockImages @CallReturn(CR\BackgroundMode\StartUp\GNMBackgroundAssistantPictureSet.txt)
-@RapidCodeOn @SystemMessage 60% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
-@NullResponse @RapidCodeOn @Flag(CrazyDommeMode) @CallReturn(CR\BackgroundMode\StartUp\CrazyDommeMode.txt)
-@RapidCodeOn @SystemMessage 80% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
-@NullResponse @RapidCodeOn @CallReturn(CR\BackgroundMode\StartUp\GNMSetMood.txt)
+@NullResponse @CallReturn(CR\BackgroundMode\StartUp\GDUpdateVars.txt)
+@SystemMessage 20% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
+@NullResponse  @CallReturn(CR\StateCheck.txt)
+@SystemMessage 40% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
+@NullResponse @CallReturn(CR\BackgroundMode\StartUp\GNMBackgroundAssistantPictureSet.txt)
+@SystemMessage 60% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
+@NullResponse  @Flag(CrazyDommeMode) @CallReturn(CR\BackgroundMode\StartUp\CrazyDommeMode.txt)
+@SystemMessage 80% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
+@NullResponse @CallReturn(CR\BackgroundMode\StartUp\GNMSetMood.txt)
 @NullResponse @Flag(ShopUnlockAll) @CallReturn(CR\BackgroundMode\Shop\UnlockAll.txt)
-@RapidCodeOn @SystemMessage 100% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
+@SystemMessage 100% loaded @ShowImage[\GNMImages\Punishment\Grounding\BlackBase.*]
 (PlayIntro) //First launch? Check below
 @NullResponse @RapidCodeOn
 @NullResponse @CheckFlag(SpicyIntro)
@@ -18,7 +18,7 @@
 @NullResponse @CheckFlag(HalfFinish)
 @NullResponse @Call(CR\BackgroundMode\StartUp\GNMBackgroundStartUpFirst.txt) @info(at the end of GNMBackgroundStartUpFirst Flag HalfFinish is set)
 (HalfFinish)
-@NullResponse @UnlockImages @Call(CR\BackgroundMode\StartUp\GNMFirstMeeting.txt) @info(Tease End after GNMFirstMeeting and delete Flag HalfFinish)
+@NullResponse @Call(CR\BackgroundMode\StartUp\GNMFirstMeeting.txt) @info(Tease End after GNMFirstMeeting and delete Flag HalfFinish)
 (SpicyIntro)
 @NullResponse @CallReturn(CR\BackgroundMode\StartUp\Update\UpdateChecker.txt)
 @NullResponse @CheckFlag(GoddessMode)
