@@ -100,7 +100,7 @@ I won't tolerate @RT(impolite,rude,disrespectful,ignorant) behaviour! #DT
 (Denial1)
 @RT(As you well know,As you know,As you should know,Oh well,Oh my,Poor you) @LockImages #ChastityOffDenied @Wait(5)
 @RT(You're under strict lockdown,You're strictly locked,You're not to be released,You are still being punished,You're serving a punishment) @Wait(5)
-@RT(Meaning there will be no release from that #Cage..,Meaning you won't be released for this session,So there won't be any release) @UnlockImages @Wait(5)
+@RT(Meaning there will be no release from that #ChastityCage..,Meaning you won't be released for this session,So there won't be any release) @UnlockImages @Wait(5)
 @NullResponse @Goto(IntroChastity)
 (Denial2)
 @NullResponse @CallReturn(CR\GNMChastityOn.txt)
