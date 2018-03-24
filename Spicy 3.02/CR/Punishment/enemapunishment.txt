@@ -65,7 +65,7 @@
 @Goto(EnduringEnema)
 (E8)
 @SystemMessage [Miss Sarah]: first we stretch out that tummy of yours...#EnemaChat
- @SystemMessage [Miss Sarah]: then we dilate your ass. @Wait(#Random(20,60)) #EnemaChat
+@SystemMessage  then we dilate your ass. @Wait(#Random(20,60)) #EnemaChat
 @Goto(EnduringEnema)
 (E9)
 @SystemMessage [Miss Sarah]: get yourself nice and clean #Slave ... you never know when I'm going to take you Ass to Mouth @Wait(#Random(20,60)) #EnemaChat
@@ -78,10 +78,12 @@
 @SystemMessage [Miss Sarah]: thats it... stretch out your abdomen and let me in. @Wait(#Random(20,60)) #EnemaChat
 @Goto(EnduringEnema)
 (E11)
-@SystemMessage [Miss Sarah]: I want you to get into prayer position @Wait(#Random(10,15)) #EnemaChat
-@SystemMessage [Miss Sarah]: look at you praying to the Goddess of enemas @Wait(#Random(10,15)) #EnemaChat
-@SystemMessage [Miss Sarah]: tell me aloud #SlaveName, do you feel humble there? @Wait(#Random(10,15)) #EnemaChat
-@SystemMessage [Miss Sarah]: and who is your Goddess? @Wait(#Random(10,20)) #EnemaChat
+@SystemMessage [Miss Sarah]: I want you to get into prayer position @Wait(#Random(5,15)) #EnemaChat
+@SystemMessage [Miss Sarah]: look at you praying to the Goddess of enemas @Wait(#Random(5,15)) #EnemaChat
+@SystemMessage [Miss Sarah]: tell me aloud #SlaveName, do you feel humble there? @Wait(#Random(5,15)) #EnemaChat
+@SystemMessage [Miss Sarah]: and who is your Goddess? @Wait(#Random(4,5)) #EnemaChat
+@SystemMessage  #GNMGood @Wait(#Random(20,30)) #EnemaChat
+
 @Goto(EnduringEnema)
 (E12)
 @SystemMessage [Miss Sarah]: here's a tip, keep your ankles together and you're knees spread wide, you can really squeeze your ass closed that way @Wait(#Random(20,60)) #EnemaChat
@@ -128,12 +130,12 @@
 @SystemMessage [Miss Sarah]: #SlaveName, please keep in mind that you don't have permission to leak a drop yet. #GNMlol #EnemaChat
 @SystemMessage [Miss Sarah]: Go position yourself on the toilet, but keep me near. @Wait(#Random(10,20)) #EnemaChat
 @SystemMessage [Miss Sarah]: well, is there anything you'd like to ask me ... hmmm?  #EnemaChat
-[please, release, poop,shit, dump, evacuate, defecate, may, can] @SystemMessage [Miss Sarah]: hmmm, let me think about that? #GNMGrin @Wait(#Random(10,20) #EnemaChat
-@DifferentAnswer  @SystemMessage [Miss Sarah]: you're so full of shit, you don't make sense @Wait(#Random(10,20)  #EnemaChat
+[please, release, poop,shit, dump, evacuate, defecate, may, can] @SystemMessage [Miss Sarah]: hmmm, let me think about that? #GNMGrin @Wait(#Random(10,20)) #EnemaChat
+@DifferentAnswer  @SystemMessage [Miss Sarah]: you're so full of shit, you don't make sense @Wait(#Random(10,20))  #EnemaChat
 @SystemMessage [Miss Sarah]:  to be 100% honest #SlaveName, I just haven't heard enough groveling yet. #GNMlol #EnemaChat
 [please,beg,humble,Please,PLEASE,release,poop,shit,dump,evacuate,defecate,may,can] @SystemMessage [Miss Sarah]: Hmmm, well if it means that much to you, go ahead #GNMLol  @Wait(#Random(10,20)) #EnemaChat
-@SystemMessage [Miss Sarah]: I hope you appretiate my generosity #EnemaChat
-@SystemMessage [Miss Sarah]: @RT(hmm, let it flow, hahaha bombs away, do you feel humbled?, you look pathetic, gurgle gurgle, #Laugh) @Wait(#Random(10,20) #EnemaChat
+@SystemMessage [Miss Sarah]: I hope you appreciate my generosity #EnemaChat
+@SystemMessage [Miss Sarah]: @RT(hmm, let it flow, hahaha bombs away, do you feel humbled?, you look pathetic, gurgle gurgle, #Laugh) @Wait(#Random(10,20)) #EnemaChat
 @SystemMessage [Miss Sarah]: I want to get ALL that water out of you #Laugh @Wait(#Random(20,30)) #EnemaChat
 @SystemMessage [Miss Sarah]: maybe I should give you a swirlie....... just kidding  #GNMsmile @Wait(#Random(20,30)) #EnemaChat
 @SystemMessage [Miss Sarah]: #SlaveName, take your time and complete this Enema  @Wait(#Random(5,10)) #EnemaChat
