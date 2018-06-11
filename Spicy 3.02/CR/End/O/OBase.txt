@@ -29,19 +29,18 @@ Only the vibrator may! #DT
 What? #DT @CustomMode(ModeText, Normal)
 Are you already asking me for that? #GNMEmoteSad #DT
 We've barely begun! The answer is no! #DT
-In fact.. #DT @Goto(ChastityCheck)
+In fact.. #DT @Goto(End)
 (Orgasm)
 @RT(Yes!,You have my permission!,Yes go ahead and ruin!,Yes you may ruin it!,Yes go ahead and ruin #SlaveName!,Ruin it #SlaveName) #DT @CustomMode(ModeText, Normal) @Wait(10)
 #GNMMoan #DT @Goto(AteCheck)
 (EndSlow)
 Stop all stimulation #DT @CustomMode(ModeText, Normal)
 This is taking too long #SlaveName #DT
-I don't have all day.. #DT @Goto(ChastityCheck)
+I don't have all day.. #DT @Goto(End)
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
-
+(End)
+@End
 
 ########################## - Comment - ##########################
 #@CustomMode(I saw boobs, Video, Video Closed) Stops video and goes to (Video Closed) if I saw boobs is typed in chat.
