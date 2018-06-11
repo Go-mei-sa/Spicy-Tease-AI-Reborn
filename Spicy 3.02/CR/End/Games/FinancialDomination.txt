@@ -32,7 +32,12 @@ Which is less than you have.. #DT
 So I guess there won't be any deal today #GNMGrin #DT @Goto(Deny)
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@Goto(End)
+(End)
+@End

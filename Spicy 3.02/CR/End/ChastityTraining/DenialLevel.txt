@@ -4,12 +4,12 @@
 @NullResponse @SetVar[UpdateDenialLevel]=[0]
 @NullResponse @ChangeVar[UpdateDenialLevel]=[UpdateDenialLevel]+[#Random(3,11)]
 @NullResponse @SetVar[TimeToUpdate]=[0]
-@NullResponse @CallReturn(CR\End\Farewell.txt)
+@NullResponse @Goto(End)
 (FirstDenialUpdate)
 @NullResponse @ChangeVar[TimeToUpdate]=[TimeToUpdate]+[1]
 @Variable[#DateDifference(TimeSinceO,Days)]>=[3] @NullResponse @Goto(End)
 @NullResponse @If[TimeToUpdate]>[UpdateDenialLevel]Then(Update)
-@NullResponse @CallReturn(CR\End\Farewell.txt)
+@NullResponse @Goto(End)
 (Update)
 @NullResponse @SetVar[UpdateDenialLevel]=[0]
 @NullResponse @ChangeVar[UpdateDenialLevel]=[UpdateDenialLevel]+[#Random(5,15)]
@@ -112,4 +112,4 @@ Level 12 to 15 is for the High skilled #DT
 @Variable[DenialLevelNr]>=[5] @RT(Bumping you down a bit,Decreasing it then,Adjusting it a little then) #DT @ChangeVar[DenialLevelNr]=[DenialLevelNr]-[#Random(1,2)] @Goto(End)
 @Variable[DenialLevelNr]>=[2] @RT(Bumping you down a bit,Decreasing it then,Adjusting it a little then) #DT @ChangeVar[DenialLevelNr]=[DenialLevelNr]-[1] @Goto(End)
 (End)
-@NullResponse @CallReturn(CR\End\Farewell.txt)
+@End

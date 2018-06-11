@@ -16,7 +16,7 @@ Looking yourself in the eyes as the cum dripples from your #GNMCock #DT
 @RT(Now..,Well..,Hmm..) #DT
 @RT(Do you still want to ruin or just stay denied?,Do you want to proceed with the ruin or stay denied) #GNMGrin #DT
 [ruin,ruined]Then lets proceed.. #DT
-[deny,denied]Well okay.. #DT @Goto(ChastityCheck)
+[deny,denied]Well okay.. #DT @Goto(End)
 @DifferentAnswer Deny or Ruin? #DT
 @RT(Get on all fours and do as I command,Get on all fours then and do as I instructed) #DT
 Report 'done' when you're done.. #DT
@@ -30,5 +30,5 @@ A mirror if possible #DT @CustomMode(done, Goto, R6Done)
 @RT(This is the cow position,This is called the milking cow..) #GNMGrin #DT @Goto(AteCheck)
 (AteCheck)
 @NullResponse #GDRegisterRuined @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+(End)
+@End

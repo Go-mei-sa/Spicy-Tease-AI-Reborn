@@ -55,7 +55,12 @@ I hope that you enjoyed it  #DT
 But now it's time for you to enjoy a release! #DT @Goto(Ruined,Orgasm)
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@NullResponse @Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@NullResponse @Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@NullResponse @Goto(End)
+(End)
+@End

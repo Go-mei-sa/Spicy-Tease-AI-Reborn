@@ -19,7 +19,11 @@ Well to prevent from just guessing yes everytime I'm increasing the magical numb
 @DifferentAnswer #GNMYesOrNo #DT
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@Goto(End)
+@End

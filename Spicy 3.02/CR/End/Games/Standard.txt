@@ -48,11 +48,15 @@
 @RT(Maybe..,Again maybe,once more.. Maybe,If you're lucky..) #DT
 (QuickEnd)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@Goto(End)
 (RuinOCheck)
 @NullResponse @SetVar[OTime]=[0] 
 @NullResponse #DenialLevel @CallReturn(CR\End\Decide\DecideORStandard.txt)
-@End
+@Goto(End)
 (FreeOrgasm)
 #SlaveName #DT
 I see you have an Orgasm Pass #DT
 Lets see to it #DT @CallReturn(CR\End\O\O1.txt)
+@Goto(End)
+(End)
+@End

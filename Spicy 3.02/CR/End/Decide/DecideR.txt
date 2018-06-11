@@ -2,19 +2,30 @@
 @NullResponse @Goto(R1,R2,R3,R4,R5,R6)
 (RBase)
 @NullResponse @CallReturn(CR\End\R\RBase.txt)
+@NullResponse @Goto(End)
 (R1)
 @NullResponse @CallReturn(CR\End\R\R1.txt)
+@NullResponse @Goto(End)
 (R2)
 @NullResponse @CallReturn(CR\End\R\R2.txt)
+@NullResponse @Goto(End)
 (R3)
 @NullResponse @CallReturn(CR\End\R\R3.txt)
+@NullResponse @Goto(End)
 (R4)
 @NullResponse @CallReturn(CR\End\R\R4.txt)
+@NullResponse @Goto(End)
 (R5)
 @NullResponse @CallReturn(CR\End\R\R5.txt)
+@NullResponse @Goto(End)
 (R6)
 @NullResponse @CallReturn(CR\End\R\R6.txt)
+@NullResponse @Goto(End)
 (1)
+(End)
+@End
+
+# Comments
 1. 10 images --> Ruin
 2. Watch sissy movie
 3. Watch video and cum when the sub does

@@ -85,7 +85,12 @@ It was a <i>no no</i>  #DT
 Better luck tomorrow! #DT @Goto(Deny)
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@NullResponse @Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@NullResponse @Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@NullResponse @Goto(End)
+(End)
+@End

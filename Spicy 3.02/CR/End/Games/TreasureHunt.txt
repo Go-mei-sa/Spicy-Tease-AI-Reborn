@@ -10,7 +10,12 @@ Well do you wish to use one of your precious passes? #DT
 @DifferentAnswer #GNMYesOrNo #DT
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@Goto(End)
+(End)
+@End

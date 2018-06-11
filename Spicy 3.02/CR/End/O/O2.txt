@@ -10,7 +10,7 @@
 (Understand)
 @RT(Is that understood?,Are we clear on that?,Do you understand?,Is everything perfectly clear?) #DT
 [yes]#GNMGood #DT
-[no]Well then.. #DT @Goto(ChastityCheck)
+[no]Well then.. #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 @RT(Might make you enjoy the video a little more,Perhaps you'll enjoy the video a little more!) #GNMMoan #DT
 @RT(Enjoy!,Have fun,Get at it!) #DT
@@ -19,9 +19,10 @@
 @RT(Well you desperate fuck,Tell me #SlaveName) #DT
 @RT(Did you orgasm?,Did you manage to orgasm?) #DT
 [yes]#GNMGood #DT @Goto(AteCheck)
-[no]Well too bad #GNMGrin #DT @Goto(ChastityCheck)
+[no]Well too bad #GNMGrin #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@Goto(End)
+(End)
+@End

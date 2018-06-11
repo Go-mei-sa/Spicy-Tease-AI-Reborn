@@ -180,6 +180,7 @@ Do you wish to play again? #DT
 @NullResponse @ChangeVar[WOOMax]=[WOOMax]+[12]
 A new window has been set #DT
 @NullResponse @CallReturn(CR\End\CEI\AteCheck.txt)
+@Goto(End)
 (Continue1)
 Do you wish to play again? #DT
 [yes]#GNMGood #DT
@@ -189,17 +190,22 @@ Do you wish to play again? #DT
 @NullResponse @SetVar[WOOMax]=[0] @ChangeVar[WOOMax]=[WOOMax]+[WOOMin]
 @NullResponse @ChangeVar[WOOMax]=[WOOMax]+[12]
 A new window has been set #DT
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@Goto(End)
 (NoMore)
 Reverting back to standard then.. #DT @DeleteFlag(WindowOfOpportunity) @SetFlag(Standard)
 @NullResponse @CallReturn(CR\End\CEI\AteCheck.txt)
+@Goto(End)
 (NoMore2)
 Reverting back to standard then.. #DT @DeleteFlag(WindowOfOpportunity) @SetFlag(Standard)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@Goto(End)
 (NewWindow)
 @NullResponse @SetDate(WOOTimer, 0 Hours) @SetVar[WOOMin]=[0] @ChangeVar[WOOMin]=[WOOMin]+[#Random(32,104)]
 @NullResponse @SetVar[WOOMax]=[0] @ChangeVar[WOOMax]=[WOOMax]+[WOOMin]
 @NullResponse @ChangeVar[WOOMax]=[WOOMax]+[12]
 A new window has been set #DT
+@Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@Goto(End)
+(End)
+@End

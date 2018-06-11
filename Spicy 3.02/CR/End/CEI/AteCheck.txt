@@ -1,3 +1,2 @@
 @NullResponse @CallReturn(CR\End\CEI\AteCumCheck.txt)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
 @End

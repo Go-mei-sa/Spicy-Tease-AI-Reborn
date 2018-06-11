@@ -35,17 +35,19 @@ Miss all @ShowVar[O3Chances] chances and you forfeit your chance to cum #GNMMoan
 @RT(Good luck!,Best of luck #GNMMoan,May the odds be ever in your favour #GNMGrin,Good luck!,Good luck!,Good luck!,Good luck!) #DT @Goto(O3Routine)
 (O3NoOrgasm2)
 @RT(Aww that was your 5 chances!,Aww that was your 5 changes!,Oh my that was all 5 chances!) #DT #GNMEmoteSad
-@RT(Better luck next time..,Maybe next time right!,Perhaps next time!) #DT @CheckFlag(CuckMode) @Goto(ChastityCheck)
+@RT(Better luck next time..,Maybe next time right!,Perhaps next time!) #DT @CheckFlag(CuckMode) @Goto(End)
 (O3Came)
 @RT(You hit the sweet spot #GNMGrin,You got it just right!,You hit the spot exactly!) #DT
 @RT(Good for you!,I'm happy for you!) #GNMEmoteHappy #DT @Goto(AteCheck)
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@Goto(End)
 (CuckMode)
 As promised a small slideshow! #DT @SetVar[SlideShow]=[0]
 @NullResponse @ChangeVar[SlideShow]=[SlideShow]+[#Random(15,30)]
 (CuckMode2)
 @NullResponse @ShowImage[\GNMImages\Ends\CuckOld\*.jpg] @Wait(#Random(2,5)) @ChangeVar[SlideShow]=[SlideShow]-[1]
-@NullResponse @If[SlideShow]<=[0]Then(ChastityCheck) @Goto(CuckMode2)
+@NullResponse @If[SlideShow]<=[0]Then(End) @Goto(CuckMode2)
+@Goto(End)
+(End)
+@End

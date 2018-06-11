@@ -8,7 +8,7 @@ You are to remain locked for 7 consecutive days! #DT
 Your only release time is if you are permitted in sessions! #DT
 Good luck #SlaveName #DT
 @CallReturn(CR\End\ChastityOn.txt)
-@End
+@NullResponse @Goto(End)
 (ExamComplete)
 The time has come #SlaveName #DT @DeleteFlag(ChastityExamActive)
 Have you been locked up for the past 7 days? #DT
@@ -21,14 +21,15 @@ This means that you're training is over! #DT @DeleteFlag(ChastityTrainingActive)
 I want you to celebrate #DT #GDRegisterOrgasm
 Orgasm however you like! #DT
 Lock yourself back up afterwards! #GNMMoan #DT @SetFlag(ChastityIsOn) @ChastityOn @EndTease
-@CallReturn(CR\End\Farewell.txt)
-@End
+@Goto(End)
 (DuringExam)
 @NotFlag(ChastityIsOn) Since you're in the middle of your exam I simply want you to lock yourself up #DT
 Calm yourself and stay strong! #DT @SetFlag(ChastityIsOn) @ChastityOn
 @NullResponse @CallReturn(CR\End\ChastityTraining\DenialLevel.txt)
+@NullResponse @Goto(End)
 (NotComplete)
 That disappoints me #SlaveName #DT #MeritChangeNMedium
 Whatever.. #DT
 Let's restart your exam then #DT @Goto(StartExam)
+(End)
 @End

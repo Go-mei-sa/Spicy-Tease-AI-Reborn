@@ -3,11 +3,15 @@
 (Standard)
 @RT(#SlaveName,Slave,#Slut) #DT
 @RT(I've changed my mind,I've had a change of heart,I've decided on something else)
-@RT(There won't be any orgasm today,You won't be cumming today..,There is 0 chance of orgasm today,No orgasm for you,No ejaculation for you..) #DT
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@RT(There won't be any orgasm today,You won't be cumming today..,There is 0 chance of orgasm today,No orgasm for you,No ejaculation for you..) #DT @Goto(End)
 (D1)
 @NullResponse @CallReturn(CR\End\D\D1.txt)
+@Goto(End)
 (D2)
 @NullResponse @CallReturn(CR\End\D\D2.txt)
+@Goto(End)
 (D3)
 @NullResponse @CallReturn(CR\End\D\D3.txt)
+@Goto(End)
+(End)
+@End

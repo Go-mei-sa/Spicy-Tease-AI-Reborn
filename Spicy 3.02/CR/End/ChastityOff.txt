@@ -13,4 +13,4 @@ Are you done? #DT
 (Off2)
 @NullResponse @UnlockImages
 @NullResponse @CallReturn(CR\End\ChastityTraining\DenialLevel.txt)
-@End478*
+@End

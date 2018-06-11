@@ -12,7 +12,7 @@
 (Understand)
 @RT(Is that understood?,Are we clear on that?,Do you understand?,Is everything perfectly clear?) #DT
 [yes]#GNMGood #DT
-[no]Well then.. #DT @Goto(ChastityCheck)
+[no]Well then.. #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 @RT(The clock is ticking,Tick tock!) #SlaveName #DT
 Write 'done' when you're done #DT @CustomMode(done, Goto, O1Done) @Wait(#Random(300,1500))
@@ -21,12 +21,13 @@ Write 'done' when you're done #DT @CustomMode(done, Goto, O1Done) @Wait(#Random(
 @RT(If not then there's always next time,If not well then next time..) @RT(#GNMGrin,#GNMMoan) #DT
 Did you cum? #DT
 [yes] @RT(Good for you!,Thats good for you!,I hope you're happy then!) #DT @Goto(AteCheck)
-[no] @RT(Aww,Well too bad #SlaveName) #GNMLol #DT @Goto(ChastityCheck)
+[no] @RT(Aww,Well too bad #SlaveName) #GNMLol #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (O1Done)
 @RT(Well well,Wauv that was quick!) #DT @CustomMode(ModeText, Normal)
 @RT(I hope you enjoyed it!,I do hope you managed to enjoy it!) #GNMEmoteHappy #DT @Goto(AteCheck)
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@Goto(End)
+(End)
+@End

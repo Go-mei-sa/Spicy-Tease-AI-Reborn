@@ -1,6 +1,6 @@
 (BeadsDeep)
 @Flag(SkipNextBead) @RT(Well you drew a red bead the last time,You drew a red bead the last time,Last time you drew a red bead) #DT
-@Flag(SkipNextBead) @RT(So no draw today,So there won't be a draw today,So no drawing today) @RT(#GNMLol,#GNMGrin) #DT @DeleteFlag(SkipNextBead) @Goto(ChastityCheck)
+@Flag(SkipNextBead) @RT(So no draw today,So there won't be a draw today,So no drawing today) @RT(#GNMLol,#GNMGrin) #DT @DeleteFlag(SkipNextBead) @Goto(End)
 @RT(Its time to draw a bead,Lets draw a bead!,Time to draw a bead,Time for you to draw a bead..) #SlaveName #DT
 @Variable[WhiteBeads]>[1] @RT(You have,Currently you have,At this point you have) @ShowVar[WhiteBeads] white beads #DT
 @Variable[WhiteBeads]=[1] @RT(You have,Right now you have,Currently you have) @ShowVar[WhiteBeads] white bead #DT
@@ -39,7 +39,7 @@ Yellow! @ShowImage[\GNMImages\Ends\BeadGame\YellowBead.*] @ChangeVar[YellowBeads
 Meaning that starting now and for the next 2 sessions aren't allowed to touch your #GNMCock at all! #DT @Goto(Deny)
 (Red)
 Red! @ShowImage[\GNMImages\Ends\BeadGame\RedBead.*]
-@RT(So this means we'll skip this and the next draw,Meaning nothing happens today and the next draw is also cancelled!) #GNMGrin #DT @SetFlag(SkipNextBead) @Goto(ChastityCheck)
+@RT(So this means we'll skip this and the next draw,Meaning nothing happens today and the next draw is also cancelled!) #GNMGrin #DT @SetFlag(SkipNextBead) @Goto(End)
 (Black)
 Black! @ShowImage[\GNMImages\Ends\BeadGame\BlackBead.*]
 @RT(Oh my this has to feel like a blow,Auch that has to sting..,Gosh that is a blow huh!,Oh my you should see your face) #GNMGrin #DT @SetVar[WhiteBeads]=[0]
@@ -73,9 +73,13 @@ Perfect!
 @Variable[DieRoll]<[7] @ShowVar[DieRoll]! @RT(Meaning its a ruin!,So only a ruin after all this time,So you'll get a lousy ruined!) #GNMLol #DT @Goto(Ruined)
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@Goto(End)
+(End)
+@End
+@NullResponse

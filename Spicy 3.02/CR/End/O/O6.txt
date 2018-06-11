@@ -1,4 +1,4 @@
-(O6) //orgasm in cow position
+(O6) //orgasm in cow position  NEED FIXES, no check for Vibrator and Vibrator play, direclty put chastity but does not remove it...
 @Flag(SissyMode) @NullResponse @CallReturn(CR\GNMChastityOn.txt)
 @RT(I love nothing more than humiliating a #SlaveName when he is most vulnerable,It's the best thing in the world to humiliate #SlaveName) #DT
 @RT(I consider that moment to be when you're about to cum..,And I can't imagine a better momment than when you're cumming) #DT
@@ -22,9 +22,9 @@ I'm assigning you punishment points.. #DT @ChangeVar[GNMPPoints]=[GNMPPoints]+[4
 @RT(Well you desperate fuck,Tell me #SlaveName) #DT
 @RT(Did you orgasm?,Did you manage to orgasm?) #DT
 [yes]#GNMGood #DT @Goto(AteCheck)
-[no]Well too bad #GNMGrin #DT @Goto(ChastityCheck)
+[no]Well too bad #GNMGrin #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+(End)
+@End

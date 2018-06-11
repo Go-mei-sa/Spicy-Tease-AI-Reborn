@@ -6,4 +6,4 @@
 @NullResponse @ShowImage[\GNMImages\Ends\CuckOld\*.jpg] @Wait(5)
 @NullResponse @ShowImage[\GNMImages\Ends\CuckOld\*.jpg] @Wait(5)
 @RT(I bet that makes you a little happy,I bet that makes you smile #SlaveName) #GNMLol #DT
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@End

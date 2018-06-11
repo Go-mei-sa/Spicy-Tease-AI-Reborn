@@ -21,7 +21,7 @@ If you fail to stroke when suppose to I will award you punishment points #DT
 If you manage to do it I will reward you with gold #DT
 @RT(Are you up for the challenge?,Wanna do it?) #DT
 [yes]#GNMGood ! #GNMEmoteHappy #DT #MeritChangePLow
-[no]Well another time perhaps #DT #MeritChangeNLow @Goto(ChastityCheck)
+[no]Well another time perhaps #DT #MeritChangeNLow @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 @RT(Enjoy #SlaveName,Have fun little one!) #DT
 @NullResponse @PlayVideo[\GNM_Videos\Endings\R4\*.mp4]
@@ -35,5 +35,5 @@ If you manage to do it I will reward you with gold #DT
 @DifferentAnswer Just tell me, did you not cum or did you stop?
 (AteCheck)
 @NullResponse @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+(End)
+@End

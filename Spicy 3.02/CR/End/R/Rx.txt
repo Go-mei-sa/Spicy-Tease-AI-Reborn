@@ -3,7 +3,7 @@ Explain conditions
 (Understand)
 @RT(Is that understood?,Are we clear on that?,Do you understand?,Is everything perfectly clear?) #DT
 [yes]#GNMGood #DT
-[no]Well then.. #DT @Goto(ChastityCheck)
+[no]Well then.. #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (Game)
 Game
@@ -18,7 +18,7 @@ Game
 @DifferentAnswer #GNMYesOrNo #DT
 @RT(Did you orgasm or did you simply not make it?,Did you have an orgasm or nothing at all?) #DT
 [orgasm,i came]@RT(What!?,Oh my..) #DT #MeritChangeNHigh #GDRegisterOrgasm @Goto(Bad)
-[nothing,not]Well better luck next time #GNMGrin #DT @Goto(ChastityCheck)
+[nothing,not]Well better luck next time #GNMGrin #DT @Goto(End)
 @DifferentAnswer Did you cum or nothing? #DT
 (Bad)
 @RT(That makes me angry,I can't describe how disappointed I am..) #SlaveName #DT #MeritChangeNHigh
@@ -27,8 +27,8 @@ Game
 
 (AteCheck)
 @NullResponse @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+(End)
+@End
 
 
 (Commands)

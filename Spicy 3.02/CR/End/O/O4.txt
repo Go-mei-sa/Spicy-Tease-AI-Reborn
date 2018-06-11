@@ -1,5 +1,5 @@
 (O4) //condom and pillow grinding, hands behind head.
-@Flag(SissyMode) @NullResponse @Goto(Sissy1)
+@Flag(SissyMode) @NullResponse @Goto(Sissy1) @Info Sissy part seems buggy : TODO : fix or remove
 @RT(Do you have a condom,Are you in possession of a condom) @RT(#SlaveName,#SubName,#Slut) ? #DT
 [yes]#GNMGood @RT(fetch it and put it on..,Retrieve it and put it on your #GNMCock) #DT @Goto(O4Continue)
 [no]@RT(Well then..,Okay then..) #DT
@@ -7,7 +7,7 @@
 @RT(This might get messy..,This could get a little messy,Perhaps this might get messy) #DT
 @RT(Are you okay with that?,I'd hope you might be okay with that?) #DT
 [yes]#GNMGood #DT
-[no]@RT(Well then..,Perhaps this is for the better..) #DT @Goto(ChastityCheck)
+[no]@RT(Well then..,Perhaps this is for the better..) #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (O4Continue)
 @RT(You'll also need a pillow and a piece of string,You also have to fetch a string and a pillow)  #DT
@@ -23,7 +23,7 @@
 (Understand)
 @RT(Is that understood?,Are we clear on that?,Do you understand?,Is everything perfectly clear?) #DT
 [yes]#GNMGood #DT
-[no]Well then.. #DT @Goto(ChastityCheck)
+[no]Well then.. #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 @RT(Enjoy,Have fun) @RT(#GNMLol,#GNMMoan) #DT @Goto(O4a,O4b,O4c)
 (O4a)
@@ -39,12 +39,11 @@
 @RT(Well you desperate fuck,Tell me #SlaveName) #DT
 @RT(Did you orgasm?,Did you manage to orgasm?) #DT
 [yes]#GNMGood #DT @Goto(AteCheck)
-[no]Well too bad #GNMGrin #DT @Goto(ChastityCheck)
+[no]Well too bad #GNMGrin #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@Goto(End)
 (Sissy1)
 @NullResponse @CallReturn(CR\End\ChastityOn.txt)
 Fetch your vibrator! #DT @Wait(15)
@@ -57,9 +56,11 @@ This exercise is all about you having to stand up and press your #Cage into the 
 Hands behind your back preferably tied #DT
 @RT(Is that understood?,Are we clear on that?,Do you understand?,Is everything perfectly clear?) #DT
 [yes]#GNMGood #DT
-[no]Well then.. #DT @Goto(ChastityCheck)
+[no]Well then.. #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 Go ahead and set it up then! #DT @Wait(45)
 Now #Slut #DT
 I'm putting on a piece of music #DT
 You are to grind yourself while that music plays and try to orgasm #GNMGrin #DT @Goto(Test)
+(End)
+@End

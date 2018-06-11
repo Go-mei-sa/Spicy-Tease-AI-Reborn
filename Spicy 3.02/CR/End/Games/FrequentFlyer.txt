@@ -20,7 +20,12 @@ Do you want to play again or go back to standard? #DT
 @DifferentAnswer #GNMYesOrNo #DT
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@NullResponse @Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@NullResponse @Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@NullResponse @Goto(End)
+(End)
+@End

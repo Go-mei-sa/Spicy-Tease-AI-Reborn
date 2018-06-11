@@ -17,9 +17,9 @@ Red means hands behind your head no touching #DT @SetVar[O5Images]=[#Random(35,6
 @RT(Well we're at the end..,This is the end!,That's it) #DT
 @RT(Did you cum?,Did you have an orgasm?) #DT
 [yes]#GNMGood #DT @Goto(AteCheck)
-[no]@RT(Aww better luck next time,Better luck next time huh!) #DT @Goto(ChastityCheck)
+[no]@RT(Aww better luck next time,Better luck next time huh!) #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)
-(ChastityCheck)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+(End)
+@End

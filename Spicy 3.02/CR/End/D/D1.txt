@@ -4,4 +4,4 @@
 @NullResponse @PlayVideo[\GNM_Videos\Endings\CM1\*.mp4]
 @RT(Now don't be sad,Look happy,don't look like that) #DT
 @RT(Be happy that someone else had <i>fun</i>,Be happy that at least someone else had fun,You should rejoice knowing that <i>other</i> people get to cum) #DT
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@End

@@ -31,4 +31,4 @@ Today you won't be told to eat anything #DT
 But from now on #DT
 Expect to swallow more and more as time passes! #GNMGrin #DT 
 (End)
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@End

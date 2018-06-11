@@ -11,4 +11,4 @@
 @Variable[CEIXP]>=[0] @NullResponse @SetVar[CEILevel]=[1] @Goto(Inform)
 (Inform)
 Your CEI level is @ShowVar[CEILevel] #DT
-@NullResponse @CallReturn(CR\End\ChastityOn.txt)
+@End

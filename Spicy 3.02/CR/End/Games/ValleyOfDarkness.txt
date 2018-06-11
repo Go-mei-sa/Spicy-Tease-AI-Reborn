@@ -43,7 +43,12 @@
 @NullResponse @SetVar[ValleyOfDarknessSet]=[#Random(9,12)] @Chance60(Orgasm) @Goto(Ruined)
 (Orgasm)
 @NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@Goto(End)
 (Ruined)
 @NullResponse @CallReturn(CR\End\Decide\DecideR.txt)
+@Goto(End)
 (Deny)
 @NullResponse @CallReturn(CR\End\Decide\DecideD.txt)
+@Goto(End)
+(End)
+@End

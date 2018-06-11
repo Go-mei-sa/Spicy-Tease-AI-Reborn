@@ -58,3 +58,4 @@ You don't have enough lock up points to roll the die #GNMEmoteSad #DT
 Maybe next time #SlaveName! #DT
 (End)
 @NullResponse @CallReturn(CR\End\ChastityTraining\DenialLevel.txt)
+@End
