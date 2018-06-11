@@ -36,7 +36,7 @@
 [exit,leave,save] @NullResponse @Goto(End)
 @DifferentAnswer @NullResponse @Goto(AvailableLimits)
 (gdAnal_Never)
-@SystemMessage #VANC #VANP Anal play is now no longer a hard limit of yours @DeleteFlag(gdAnal_Never) @Goto(Congratulations
+@SystemMessage #VANC #VANP Anal play is now no longer a hard limit of yours @DeleteFlag(gdAnal_Never) @Goto(Congratulations)
 (LimitAnal)
 @SystemMessage #VANC #VANP Anal play is now on your hard limit list #GNMEmoteSad @SetFlag(gdAnal_Never) @Goto(RespectLimits)
 
