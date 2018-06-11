@@ -21,36 +21,36 @@ Can the mode be used for pleasure, punishment or both? #DT
 [pleasure]#GNMGood #DT @SetFlag(Mode1Pleasure)
 [punishment]#GNMGood #DT @SetFlag(Mode1Punishment)
 [both]#GNMGood #DT @SetFlag(Mode1Both)
-@Different Pleasure, punishment or both? #DT
+@DifferentAnswer Pleasure, punishment or both? #DT
 @NullResponse @Goto(Continue)
 (2Mode)
 Can the first mode be used for pleasure, punishment or both? #DT
 [pleasure]#GNMGood #DT @SetFlag(Mode1Pleasure)
 [punishment]#GNMGood #DT @SetFlag(Mode1Punishment)
 [both]#GNMGood #DT @SetFlag(Mode1Both)
-@Different Pleasure, punishment or both? #DT
+@DifferentAnswer Pleasure, punishment or both? #DT
 Can the second mode be used for pleasure, punishment or both? #DT
 [pleasure]#GNMGood #DT @SetFlag(Mode2Pleasure)
 [punishment]#GNMGood #DT @SetFlag(Mode2Punishment)
 [both]#GNMGood #DT @SetFlag(Mode2Both)
-@Different Pleasure, punishment or both? #DT
+@DifferentAnswer Pleasure, punishment or both? #DT
 @NullResponse @Goto(Continue)
 (3Mode)
 Can the first mode be used for pleasure, punishment or both? #DT
 [pleasure]#GNMGood #DT @SetFlag(Mode1Pleasure)
 [punishment]#GNMGood #DT @SetFlag(Mode1Punishment)
 [both]#GNMGood #DT @SetFlag(Mode1Both)
-@Different Pleasure, punishment or both? #DT
+@DifferentAnswer Pleasure, punishment or both? #DT
 Can the second mode be used for pleasure, punishment or both? #DT
 [pleasure]#GNMGood #DT @SetFlag(Mode2Pleasure)
 [punishment]#GNMGood #DT @SetFlag(Mode2Punishment)
 [both]#GNMGood #DT @SetFlag(Mode2Both)
-@Different Pleasure, punishment or both? #DT
+@DifferentAnswer Pleasure, punishment or both? #DT
 Can the third mode be used for pleasure, punishment or both? #DT
 [pleasure]#GNMGood #DT @SetFlag(Mode3Pleasure)
 [punishment]#GNMGood #DT @SetFlag(Mode3Punishment)
 [both]#GNMGood #DT @SetFlag(Mode3Both)
-@Different Pleasure, punishment or both? #DT
+@DifferentAnswer Pleasure, punishment or both? #DT
 @NullResponse @Goto(Continue)
 (Continue)
 How many levels does your device use? #DT @InputVar[ElectroMaxLevel]
