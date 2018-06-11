@@ -271,12 +271,13 @@
 @SystemMessage #VANC #VANP And a final question about chastity
 @SystemMessage #VANC #VANP Do you consider chastity to be something used occacionally as a plaything?
 @SystemMessage #VANC #VANP Only as a punishment?
+@SystemMessage #VANC #VANP Both?
 @SystemMessage #VANC #VANP Or something one you should try to wear full time 24/7?
 [play,plaything]@SystemMessage #VANC #VANP Okay then! @SetFlag(CPlayActive)
 [both]@SystemMessage #VANC #VANP Okay then! @SetFlag(CPlayActive,CPunishmentActive)
 [punishment,punish]@SystemMessage #VANC #VANP Okay then! @SetFlag(CPunishmentActive)
 [fulltime,full,time]@SystemMessage #VANC #VANP Okay then! @SetFlag(C247)
-@DifferentAnswer @SystemMessage #VANC #VANP Play, punishment or full time?
+@DifferentAnswer @SystemMessage #VANC #VANP Play, punishment, both or full time?
 (Ass)
 @SystemMessage #VANC #VANP Slave I don't know whether you have any experience when it comes to ass play
 @SystemMessage #VANC #VANP Meaning fucking yourself or wearing butt plugs
@@ -429,7 +430,7 @@
 @DifferentAnswer @SystemMessage #VANC #VANP Play, punishment or both?
 @SystemMessage #VANC #VANP Tell me what level of shock you consider to be quite painful @InputVar[ElectroPHigh]
 @SystemMessage #VANC #VANP Tell me what level of shock you consider to be somewhat @InputVar[ElectroPMedium]
-@SystemMessage #VANC #VANP Tell me what level of shock you consider to be a painful maybe even pleasant.. @InputVar[ElectroPLow]
+@SystemMessage #VANC #VANP Tell me what level of shock you consider to be a bit painful maybe even pleasant.. @InputVar[ElectroPLow]
 (Toy5)
 @SystemMessage #VANC Gag? @ShowImage[\GNMImages\Toys\Gag.*]
 [yes]@SystemMessage #VANC #VANP #GNMGood @SetFlag(GNMToyGag)
@@ -446,10 +447,9 @@
 @SystemMessage #VANC Do you have a Wife or Girlfriend? @ShowImage[\GNMImages\Toys\Girlfriend.*]
 [yes]@SystemMessage #VANC #VANP #GNMGood @SetFlag(GNMToySetupGirlFriend)
 [no]@SystemMessage #VANC #VANP #GNMEmoteSad @DeleteFlag(GNMToySetupGirlFriend)
-[play,punish,punishment,both] @NullResponse @Goto(Toy6*)
+[play,punish,punishment,both] @NullResponse @Goto(Toy5*)
 @DifferentAnswer @SystemMessage #VANC #VANP #GNMYesOrNo
 @Flag(GNMToySetupGirlFriend) and what's this special person's name? @inputvar(GirlfriendName)
-
 @SystemMessage #VANC Basic Lingerie? @ShowImage[\GNMImages\Toys\LingerieSet.*]
 [yes]@SystemMessage #VANC #VANP #GNMGood @SetFlag(GNMToyLingerieBasic)
 [no]@SystemMessage #VANC #VANP #GNMEmoteSad @DeleteFlag(GNMToyLingerieBasic) @Goto(Toy7)
