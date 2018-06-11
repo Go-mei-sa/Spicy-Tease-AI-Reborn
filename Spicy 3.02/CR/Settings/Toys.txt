@@ -23,7 +23,7 @@
 @NullResponse @DeleteFlag(ParachutePunishment)
 @NullResponse @DeleteFlag(CollarPlay)
 @NullResponse @DeleteFlag(CollarPunishment)
-@SystemMessage #VANC First I need to know @LockImages @ShowImages[\GNMImages\Settings\Handcuffs.jpg]
+@SystemMessage #VANC First I need to know @LockImages @ShowImages[\GNMImages\Settings\Handcuffs]
 @SystemMessage #VANC How often do you want to use toys during sessions?
 @SystemMessage #VANC Either you can input a custom value or you can let the domme decide
 [custom]@SystemMessage #VANC You decide @SetFlag(ToySub) @Goto(Explain)
@@ -161,5 +161,15 @@
 [both]@NullResponse @SetFlag(CollarPlay, CollarPunishment)
 @DifferentAnswer @SystemMessage #VANC Play, punishment or both?
 (Toy11)
+@SystemMessage #VANC #VANC Do you have an enema kit? @ShowImage[\GNMImages\Toys\EnemaKit.jpg]
+[yes]@SystemMessage #VANC #GNMGood @SetFlag(GNMToyCollar)
+[no]@SystemMessage #VANC #GNMEmoteSad @Goto(Toy12)
+@DifferentAnswer @SystemMessage #VANC #GNMYesOrNo
+@SystemMessage #VANC Do you want this toy to be used for play, punishment or both?
+[play]@NullResponse @SetFlag(EnemaPlay)
+[punishment]@NullResponse @SetFlag(EnemaPunishment)
+[both]@NullResponse @SetFlag(EnemaPlay, EnemaPunishment)
+@DifferentAnswer @SystemMessage #VANC Play, punishment or both?
+(Toy12)
 @NullResponse @UnlockImages
 @End
