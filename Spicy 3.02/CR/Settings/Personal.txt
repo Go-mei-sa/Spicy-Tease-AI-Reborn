@@ -86,7 +86,7 @@
 @SystemMessage #VANC #VANP You must choose a simple value between 1 and 100
 @SystemMessage #VANC #VANP So writing '1' or '60 or '40' is okay @Goto(P6d)
 (P7)
-@flag(FullTimeTrial) @SystemMessage #VANC #VANP You are currently doing a trial of full time @Goto(P7a)
+@Flag(FullTimeTrial) @SystemMessage #VANC #VANP You are currently doing a trial of full time @Goto(P7a)
 @Flag(FullTime) @SystemMessage #VANC #VANP You are currently full time @Goto(P7b)
 @Flag(PartTime) @SystemMessage #VANC #VANP You are currently part time @Goto(P7c)
 (P7a)
