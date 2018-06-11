@@ -18,7 +18,7 @@ Do you absolutely need to cum? #DT
 @RT(You make me proud!,That makes me happy!,You make me very proud!) #MeritChangePHigh #DT
 @RT(This brings about the logical question,This begs the question) #DT
 @RT(Would you be okay with me increasing your hard limit?,Would it be alright if we took a look at your hard limit?) #DT
-[yes]#GNMGood #DT
+[yes]#GNMGood #DT @Goto(IncreaseLimit)
 [no]Thats perfectly fine! #DT
 @DifferentAnswer #GNMYesOrNo #DT
 @End
@@ -28,4 +28,5 @@ Do you absolutely need to cum? #DT
 Done! #DT 
 I'm so proud of you! #MeritChangePMedium @Goto(End)
 (End)
-@NullResponse @CallReturn(CR\End\Decide\DecideO.txt)
+@End
+
