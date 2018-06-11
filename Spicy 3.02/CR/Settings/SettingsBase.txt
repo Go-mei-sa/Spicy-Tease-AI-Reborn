@@ -10,7 +10,7 @@
 [mode,modes] @NullResponse @Goto(Modes)
 [hard limit,limits] @NullResponse @Goto(Limits)
 [none,nothing,return,mistake,error,exit,back] @SystemMessage #VANC #VANP Returning to main menu... @NullResponse
-@DifferentAnswer @SystemMessage #VANC #VANP You have the following options: Chastity, domme, denial, toys, personal, audio, modes, hardlimits, update or exit the settings
+@DifferentAnswer @SystemMessage #VANC #VANP You have the following options: Chastity, domme, denial, toys, personal, audio, modes, hard limits, update or exit the settings
 @End
 (Chastity)
 @SystemMessage #VANC #VANP Relaunching chastity settings
