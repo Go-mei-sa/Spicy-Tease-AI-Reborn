@@ -1,5 +1,4 @@
-@NotFlag(DildoPlay,ChastityIsOn) @NullResponse @Goto(NoToy2)
-@NotFlag(DildoPlay) @NullResponse @Goto(NoToy1,NoToy2)
+@NotFlag(DildoPlay) @NullResponse @Goto(ChastityCheck)
 @Flag(DildoPlay) @NullResponse @CheckFlag(SissyModule1FirstRun) @SetFlag(SissyModule1FirstRun)
 @Variable[BlowjobLevel]>[50] @SetVar[BlowjobLevel]=[50] @NullResponse 
 Hello #SlaveName #DT @SetVar[BlowjobLevel]=[1] 
@@ -153,6 +152,9 @@ Silence is never good #SlaveName #DT #MeritChangeNMedium @Goto(EndBad)
 I'm not too happy with this #GNMEmoteSad #DT @DeleteFlag(Busy) @ChangeVar[BlowjobLevel]=[BlowjobLevel]-[3]
 I need you to try harder next time #DT
 @End
+(ChastityCheck)
+@Flag(ChastityIsOn) @NullResponse @Goto(NoToy2)
+@NullResponse @Goto(NoToy1,NoToy2)
 (NoToy1)
 We're gonna have a small session of you edging! #DT @TempFlag(Busy)
 It's rather simple #DT

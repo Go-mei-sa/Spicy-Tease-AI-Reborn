@@ -104,7 +104,7 @@ Rolling a die #SlaveName #DT
 @Variable[DiceRoll]=[2] Aww two #DT @Goto(b)
 @Variable[DiceRoll]=[3] Three.. #DT @Goto(c)
 @Variable[DiceRoll]=[4] Four.. #DT @Goto(d)
-@Variable[DiceRoll]=[5] Oh wauv! its a five! #DT @Goto(e)
+@Variable[DiceRoll]=[5] Oh wow! its a five! #DT @Goto(e)
 @Variable[DiceRoll]=[6] Oh my! Six! #DT @Goto(f)
 (a)
 @NullResponse @SetVar[Timer]=[0] @ChangeVar[Timer]=[Timer]+[WOOStrokes]

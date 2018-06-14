@@ -24,7 +24,7 @@ Tell me if you manage to vibrate those balls to bliss #DT @CustomMode(#ICame, Go
 Turn on and apply the vibrator @RT(#SlaveName,#Slut) @LockImages @ShowImage @Wait(30)
 @RT(I hope you can handle the intense sensations,Enjoy it while it lasts!) #GNMMoan @Wait(30)
 Are you getting close slave? @Timeout(20,TimesUp)
-[yes]Oh wauv then you might actually be desperate #GNMLol @Wait(60)
+[yes]Oh wow then you might actually be desperate #GNMLol @Wait(60)
 [no]#GNMGrin I suppose thats no wonder #GNMEmoteHappy @Wait(60)
 @DifferentAnswer #GNMYesOrNo
 (TimesUp)

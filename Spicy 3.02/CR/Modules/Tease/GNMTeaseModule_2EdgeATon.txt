@@ -29,7 +29,7 @@ A simple number like #DT
 or 12 #DT @Goto(Loop1)
 (Continue1)
 #GNMLol #DT
-@Variable[CockSoftLength]<[7] Wauv that small! For your sake I hope you're a "grower" #DT
+@Variable[CockSoftLength]<[7] Wow that small! For your sake I hope you're a "grower" #DT
 @Variable[CockSoftLength]>[7] Well that seems almost decent #DT
 My lover's cock is 13cm when soft and he's a grower #DT
 Oh my does it grow #GNMGrin #DT
@@ -81,7 +81,7 @@ You will do @ShowVar[EdgeCountToday] edges for me today. This will set a new rec
 (Impressive1)
 @RT(Well lets begin,It's time to begin,Lets get that cock to work!,Time to work out that cock!,I hope you're ready for some cock workout!) #DT #MeritChangePLow @Goto(EdgeTraining)
 (Impressive2)
-@RT(Oh wauv!,You're really going for it!,#GNMGrin this is gonna get intense,I hope you can handle this!,Great lets not waste a moment!) #DT #MeritChangePMedium @Goto(EdgeTraining)
+@RT(Oh wow!,You're really going for it!,#GNMGrin this is gonna get intense,I hope you can handle this!,Great lets not waste a moment!) #DT #MeritChangePMedium @Goto(EdgeTraining)
 (NotImpressed)
 @RT(I'm not impressed,You really should try to do better,You could at least try a little harder,You need to try harder..) #DT #MeritChangeNLow @Goto(EdgeTraining)
 (EdgeTraining)

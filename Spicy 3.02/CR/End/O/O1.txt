@@ -1,5 +1,5 @@
 (O1) //Normal orgasm, you have X (5-15) minutes, when you hear the bell then return
-@RT(The magical day has come!,The day has finally come!,Oh wauv!) #DT
+@RT(The magical day has come!,The day has finally come!,Oh wow!) #DT
 @RT(Let me tell you how,Here are the rules..) #DT
 @RT(You'll have between 5 and 15 minutes to cum,You'll be given 5-15 minutes to ejaculate) #DT
 @RT(Exactly how much time I won't tell you,You won't know exactly how much time..) #DT
@@ -24,7 +24,7 @@ Did you cum? #DT
 [no] @RT(Aww,Well too bad #SlaveName) #GNMLol #DT @Goto(End)
 @DifferentAnswer #GNMYesOrNo #DT
 (O1Done)
-@RT(Well well,Wauv that was quick!) #DT @CustomMode(ModeText, Normal)
+@RT(Well well,Wow that was quick!) #DT @CustomMode(ModeText, Normal)
 @RT(I hope you enjoyed it!,I do hope you managed to enjoy it!) #GNMEmoteHappy #DT @Goto(AteCheck)
 (AteCheck)
 @NullResponse #GDRegisterOrgasm @CallReturn(CR\End\CEI\AteCheck.txt)

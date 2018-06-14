@@ -19,7 +19,7 @@
 @RT(So,Well well,Hmm,#GNMGrin) @RT(#SlaveName,#SubName,Slave,Slave,Slave) #DT
 @RT(Edging are we?,So you just edged!,You did an edge,You just had an edge) #DT
 @RT(Did I give you permission to edge?,Did I say you could edge?,Did I specifically said you could edge?) #DT
-[yes] @RT(Oh I did?,Oh wauv I did!?,Thats not how I remember it..) #DT @Goto(Bad1)
+[yes] @RT(Oh I did?,Oh wow I did!?,Thats not how I remember it..) #DT @Goto(Bad1)
 [no] @RT(Then you might care to explain why you edged?,Then explain to me why to edged?) #DT
 @DifferentAnswer #GNMYesOrNo #DT
 @RT(Hmm?,Well?,So?) #DT

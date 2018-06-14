@@ -470,7 +470,7 @@ Rest before you start again #DT @CustomMode(stop, Goto, Stop) @Wait(#Random(10,2
 @NullResponse @If[StrokeLevel]>[30]Then(30End)
 @NullResponse @If[StrokeLevel]>[20]Then(20End)
 @NullResponse @If[StrokeLevel]>[10]Then(10End)
-@RT(WAUV I'm disapointed..., I expected a lot MORE from you..) #DT @ChangeVar[GNMMerits]=[GNMMerits]-[50]
+@RT(WOW I'm disapointed..., I expected a lot MORE from you..) #DT @ChangeVar[GNMMerits]=[GNMMerits]-[50]
 @End
 (50End)
 @Flag(Personality1) @RT(I guess I can't expect more from you when you're at level 50 #GNMLol,I suppose I shouldn't expect more since 50 is the very top #GNMGrin,Bravo level 50!,Good job level 50!,Oh my level 50) #DT2 @ChangeVar[GNMMerits]=[GNMMerits]+[35]
@@ -487,7 +487,7 @@ Rest before you start again #DT @CustomMode(stop, Goto, Stop) @Wait(#Random(10,2
 (30End)
 @Flag(Personality1) @RT(You did okay,You effort was mediocre,I must admit I expected a little more,I suppose I really wasn't expecting much more from you,I guess ) #DT @ChangeVar[GNMMerits]=[GNMMerits]+[10]
 @Flag(Personality2) @RT(Above 30 is alright slave,Well below 40 is still OK,You could probably do better.. Maybe..,You need to work harder slave) #DT @ChangeVar[GNMMerits]=[GNMMerits]+[5]
-@Flag(Personality3) @RT(Below level 40 huh..,Oh wauv you do absolutely not impress..,I was expecting more from you #SubName) #DT @ChangeVar[GNMMerits]=[GNMMerits]-[10]
+@Flag(Personality3) @RT(Below level 40 huh..,Oh wow you do absolutely not impress..,I was expecting more from you #SubName) #DT @ChangeVar[GNMMerits]=[GNMMerits]-[10]
 @NullResponse @ChangeVar[StrokeLevel]=[StrokeLevel]-[5] 
 @End
 (20End)
