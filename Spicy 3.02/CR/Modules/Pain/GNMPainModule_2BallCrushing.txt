@@ -1,6 +1,9 @@
-@NotFlag(BallCrusherPlay,ChastityIsOn) @NullResponse @CallReturn(CR\Modules\Alternative\*.txt)
-@NotFlag(BallCrusherPlay) @NullResponse @CallReturn(CR\Modules\Alternative_Chastity\*.txt)
-@NotFlag(BallCrusherPlay) @NullResponse @Goto(End2)
+@Flag(BallCrusherPlay) @NullResponse @Goto(Start)
+@Flag(ChastityIsOn) @NullResponse @CallReturn(CR\Modules\Alternative_Chastity\*.txt)
+@Flag(ChastityIsOn) @NullResponse @Goto(End2)
+@NullResponse @CallReturn(CR\Modules\Alternative\*.txt)
+@NullResponse @Goto(End2)
+(Start)
 #SlaveName @RT(I want to have a bit of fun with your #GNMBalls,Lets play a bit with those #GNMBalls) #DT
 #Fetch ball crusher #DT
 And attach it #GNMGrin #DT
@@ -34,7 +37,7 @@ Twist it.. #DT @ShowImage @ChangeVar[MaxTwist]=[MaxTwist]+[2] @Wait(15) @Goto(Tw
 @Variable[MaxTwist]>[20] Well I suppose you wasn't terrible.. #DT @Goto(Continue1)
 @Variable[MaxTwist]>[15] Already done! Bvarh.. #DT #MeritChangeNLow @Goto(Continue1)
 @Variable[MaxTwist]>[10] Omg you have got to be kidding me.. #DT #MeritChangeNMedium @Goto(Continue1)
-@Variable[MaxTwist]<=[10] Wauv.. that was awfull! #DT #MeritChangeNHigh @Goto(Continue1)
+@Variable[MaxTwist]<=[10] Wow.. that was awfull! #DT #MeritChangeNHigh @Goto(Continue1)
 (Continue1)
 Well now that we have that part sorted out #DT @SetVar[TwistRecord]=[0]
 You may relieve the pressure on your #GNMBalls #DT @ChangeVar[TwistRecord]=[TwistRecord]+[MaxTwist]
