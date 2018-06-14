@@ -21,7 +21,8 @@ While in the corner I want you to think about @RT(why you are wearing the #Cage,
 But while in the #Cage #DT
 I want you to go a for a #CWalk walk #DT 
 @RT(I want you to learn to move around with it,It will be good for your health as well,You should thank me for encouraging you to do a little exercise) #DT
-@Flag(gdChastityAfraid) And because you are afraid of it showing in public this should be pretty @RT(intense,interesting,challenging) #DT @Goto(End)
+@Flag(gdChastityAfraid) And because you are afraid of it showing in public this should be pretty @RT(intense,interesting,challenging)
+@NullResponse @Goto(End)
 (4)
 @NullResponse @RapidCodeOn @SetVar[ChastityRewardEXP]=[37]
 But while in the #Cage #DT 
